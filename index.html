@@ -49,7 +49,7 @@
             <li class="active"><a href="#">About</a></li>
 	    -->
             <li class=""><a class="scroll-top" id="abo" href="http://yu-mei.github.io/#">Bio</a></li>
-            <li class="active"><a class="scroll-top" id="pub" href="http://yu-mei.github.io/#experience">Experience</a></li>
+            <li class=""><a class="scroll-top" id="pub" href="http://yu-mei.github.io/#experience">Experience</a></li>
 			<li class=""><a class="tag-scroll" id="pub" href="http://yu-mei.github.io/#education">Education</a></li>            
 			<li class=""><a class="tag-scroll" id="awa" href="http://yu-mei.github.io/#publication">Publication</a></li>
 			<li class=""><a class="tag-scroll" id="pub" href="http://yu-mei.github.io/#competition">Competition</a></li>
@@ -320,6 +320,36 @@
 	</div>
       </div> <!-- /container -->
 	  
+    <style>
+        .liSelected{
+            background-color:#FFA11F;
+            color:#0978D1;
+        }
+        .liNoSelected{
+            background-color:#0978D1;
+            color:#FFF;
+        }
+        .mu li:hover{
+            color:#0978D1;
+        }
+    </style>
+    <script>
+    document.getElementById("mu").onclick = function(e){
+            e = e || window.event;
+            var target = e.srcElement || e.target,
+                tagName = target.tagName.toLowerCase(),
+                allLi = document.getElementById("mu").getElementsByTagName("li");
+               
+            for(var i=0,len=allLi.length;i<len;i++){
+                if(target == allLi[i]){
+                    allLi[i].className = "liSelected";
+                }else{
+                    allLi[i].className = "liNoSelected";
+                }
+            }
+               
+        };
+    </script>
 
       <!-- Bootstrap core JavaScript
       ================================================== -->

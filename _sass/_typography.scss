@@ -38,6 +38,7 @@ table {
 a,
 table.table a {
   color: var(--global-theme-color);
+  font-weight: 400;   // Make links slightly bolder
 
   &:hover {
     color: var(--global-theme-color);

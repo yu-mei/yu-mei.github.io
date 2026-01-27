@@ -257,7 +257,9 @@ let transTheme = () => {
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+    // themeSetting = "system";
+    themeSetting = "light";
+    localStorage.setItem("theme", "light");
   }
   return themeSetting;
 };
@@ -279,9 +281,9 @@ let determineComputedTheme = () => {
 };
 
 let initTheme = () => {
-  let themeSetting = determineThemeSetting();
-
-  setThemeSetting(themeSetting);
+  // Force light every time the site loads
+  setThemeSetting("light");           // applies immediately
+  localStorage.setItem("theme", "light"); // optional: overwrite saved choice
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
@@ -297,6 +299,7 @@ let initTheme = () => {
     applyTheme();
   });
 };
+
 
 // Get the appropriate background color for Google Calendar based on current theme
 let getCalendarBgColor = () => {

@@ -42,11 +42,40 @@ layout: default
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
+      <style>
+        .news-link {
+          text-decoration: none;
+          color: inherit;
+          font-size: 2.0em;
+          margin-right: 10px;
+        }
+        .news-link:hover {
+          text-decoration: underline;
+        }
+        .news-divider {
+          flex-grow: 1;
+          height: 1px;
+          background-color: #ccc;
+        }
+
+        .news table.table td,
+        .news table.table th {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+          line-height: 1.1;
+        }
+        .news td p { margin: 0; }
+      </style>
+
+      <!-- Fancy Divider with Clickable News -->
+      <div style="display: flex; align-items: center; margin: 20px 0 10px;">
+        <a href="{{ '/news/' | relative_url }}" class="news-link">News</a>
+        <div class="news-divider"></div>
+      </div>
+
       {% include news.liquid limit=true %}
     {% endif %}
+
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
@@ -58,11 +87,32 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
+      <style>
+        .selected-link {
+          text-decoration: none;
+          color: inherit;
+          font-size: 2.0em;
+          margin-right: 10px;
+        }
+        .selected-link:hover {
+          text-decoration: underline;
+        }
+        .selected-divider {
+          flex-grow: 1;
+          height: 1px;
+          background-color: #ccc; /* or var(--global-divider-color) */
+        }
+      </style>
+
+      <!-- Fancy Divider with Clickable Selected Publications -->
+      <div style="display: flex; align-items: center; margin: 30px 0 10px;">
+        <a href="{{ '/publications/' | relative_url }}" class="selected-link">Selected Publications</a>
+        <div class="selected-divider"></div>
+      </div>
+
       {% include selected_papers.liquid %}
     {% endif %}
+
 
     <!-- Social -->
     {% if page.social %}

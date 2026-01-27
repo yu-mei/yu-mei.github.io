@@ -9,15 +9,26 @@
 $red-color: #ff3636 !default;
 $red-color-dark: #b71c1c !default;
 $orange-color: #f29105 !default;
-$blue-color: #0076df !default;
-$blue-color-dark: #00369f !default;
-$cyan-color: #2698ba !default;
+//$blue-color: #0076df !default;
+//$cyan-color: #2698ba !default;
+$blue-color: #003db8 !default;
+$blue-color-dark:#002a80 !default;
+$cyan-color: #5fb0f7 !default;
 $light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
+
 $green-color: #00ab37 !default;
 $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
+
+// MSU brand greens (from the provided color build image)
+$green-color-spartan: #18453B !default;      // Spartan Green (core)
+$green-color-kelly: #008208 !default;        // Kelly Green (accent)
+$green-color-michigan-lime: #7BBD00 !default; // Lime Green (accent)
+$green-color-excellence: #0B9A6D !default;   // Excellence Green (accent)
+$green-color-refresh: #008934 !default;      // Refresh Green (accent)
+
 $purple-color: #b509ac !default;
 $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 $pink-color: #f92080 !default;
@@ -40,6 +51,9 @@ $code-bg-color-dark: #2c3237 !default;
 // Font awesome location
 $fa-font-path: "../webfonts";
 
+// Tabler icons location
+$ti-font-path: "../fonts";
+
 // Back To Top button config
 $back-to-top-z-index: 10;
 $back-to-top-bottom: 30px;
@@ -47,6 +61,3 @@ $back-to-top-right: 30px;
 $back-to-top-diameter: 40px;
 $back-to-top-height: $back-to-top-diameter;
 $back-to-top-width: $back-to-top-diameter;
-
-// Max width default
-$max-content-width: 930px !default;

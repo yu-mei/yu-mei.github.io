@@ -1,16 +1,52 @@
 ---
 ---
 @inproceedings{mei2023simultaneous,
-  title={Simultaneous motion and stiffness control for soft pneumatic manipulators based on a Lagrangian-based dynamic model},
+  title={Simultaneous Motion and Stiffness Control for Soft Pneumatic Manipulators Based on a Lagrangian-Based Dynamic Model},
   author={Mei, Yu and Fairchild, Preston and Srivastava, Vaibhav and Cao, Changyong and Tan, Xiaobo},
   booktitle={ACC},
   year={2023},
+
   abstract={A soft continuum manipulator with tunable stiffness can not only take advantage of high compliance for safe adaptation in unknown environments, but also circumvent the drawbacks of instability and low loading capability. The high nonlinearity of soft manipulators and the strong coupling between actuation and stiffness-tuning make their simultaneous control challenging. In this work, a novel approach to simultaneous control of actuation and stiffness-tuning is proposed for soft pneumatic manipulators. With a piecewise-constant curvature assumption, a Lagrangian-based dynamic model with realistic approximation is used for control design, where the dynamics of the stiffness-tunable mechanism is incorporated. An extended Kalman filter (EKF) is proposed to estimate unmeasurable states including the stiffness and the velocity. A nonlinear model predictive control (NMPC) framework is developed first in the configuration space, and then extended to the task space, for simultaneous motion and stiffness control under inflation and vacuum pressure constraints. Simulation results are presented to support the efficacy of the proposed approach.},
   preview={ACC2023.gif},
   doi = {10.23919/ACC55779.2023.10156049},
-  poster = {MSU Symposium 2023-Yu-new.pdf},
-  slides = {ACC_Presentation_Short_0530.pdf},
+  poster = {Poster_ACC2023.pdf},
+  slides = {Slides_ACC2023.pdf},
   video = {https://www.youtube.com/watch?v=4u4hd4IwhuY},
   selected  = {true}
 }
 
+@article{shi2023automated,
+  title={Automated Soft Pressure Sensor Array-Based Sea Lamprey Detection Using Machine Learning},
+  author={Shi, Hongyang and Mei, Yu and Gonz{\'a}lez-Afanador, Ian and Chen, Claudia and Miehls, Scott and Holbrook, Christopher and Sepulveda, Nelson and Tan, Xiaobo},
+  journal={IEEE Sensors Journal},
+  volume={23},
+  number={7},
+  pages={7546--7557},
+  year={2023},
+  publisher={IEEE}
+
+  abstract={Sea lamprey, a destructive invasive species in the Great Lakes in North America, is among very few fishes that rely on oral suction during migration and spawning. Recently, soft pressure sensors have been proposed to detect the attachment of sea lamprey as part of the monitoring and control effort. However, human decision is still required for the recognition of patterns in the measured signals. In this article, a novel automated soft pressure sensor array-based sea lamprey detection framework is proposed using object detection convolutional neural networks. First, the resistance measurements of the pressure sensor array are converted to mappings of relative change in resistance. These mappings typically show two different types of patterns under lamprey attachment: a high-pressure circular pattern corresponding to the mouth rim compressed against the sensor (“compression” pattern), and a low-pressure blob corresponding to the partial vacuum region of the sucking mouth (“suction” pattern). Three types of object detection algorithms, single-shot detector (SSD), RetinaNet, and YOLOv5s, are applied to the dataset of measurements collected in the presence of sea lamprey attachment, and the comparison of their performance shows that YOLOv5s model achieves the highest mean average precision (mAP) and the fastest inference speed. Furthermore, to improve the accuracy of the prediction model and reduce the false positive (FP) rate due to the sensor’s memory effect, a filter branch with different detection thresholds for the compression and suction patterns, respectively, is added to the original machine-learning algorithm. The trained model is validated and used to automatically detect sea lamprey attachments and locate the suction area on the sensor in real time.},
+  preview={SensorJournal_Shi.jpg},
+  doi = {10.1109/JSEN.2023.3249625},
+  slides = {Slides_SensorJournal.pdf},
+  video = {https://www.youtube.com/watch?v=N5NrJuSQsJA},
+  selected  = {false}
+}
+
+@article{fairchild2023semi,
+  title={Semi-physical Modeling of Soft Pneumatic Actuators with Stiffness Tuning},
+  author={Fairchild, Preston and Shephard, Noah and Mei, Yu and Tan, Xiaobo},
+  journal={ASME Letters in Dynamic Systems and Control},
+  volume={3},
+  number={4},
+  pages={041006},
+  year={2023},
+  publisher={American Society of Mechanical Engineers}
+
+  abstract={The inherent low stiffness in soft robots makes them preferable for working in close proximity to humans. However, having this low stiffness creates challenges when operating in terms of control and sensitivity to disturbances. To alleviate this issue, soft robots often have built-in stiffness tuning mechanisms that allow for controlled increases in stiffness. Additionally, redundant pneumatic manipulators can utilize antagonistic pressure to achieve identical positions under increased stiffness. In this paper, we develop a model to predict the stiffness and configuration of a pneumatic soft manipulator under different pressure inputs and external forces. The model is developed based on the physical characteristics of a soft manipulator while enabling efficient parameter estimation and computation. The efficacy of the modeling approach is supported via experimental results.},
+  preview={LDSC_Preston.jpg},
+  doi = {10.1115/1.4064090},
+  slides = {Slides_LDSC.pdf},
+  poster = {Poster_LDSC.pdf},
+  selected  = {false}
+}

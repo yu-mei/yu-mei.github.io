@@ -259,3 +259,20 @@ ul.task-list input[type="checkbox"] {
 .d2h-diff-table {
   position: relative;
 }
+
+/* ============================
+ * Award links (News / inline posts)
+ * ============================ */
+
+a.award-link,
+a.award-link:visited {
+  color: #c41e3a !important; /* deep red */
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.award-link:hover,
+a.award-link:focus {
+  color: #8b0000 !important;
+  text-decoration: underline;
+}

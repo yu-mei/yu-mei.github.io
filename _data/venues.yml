@@ -1,9 +1,35 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+# =========================
+# Venue Color Categories
+# =========================
+# Top-tier Journal                → #8b1e1e (Deep Red)
+# Journal (General)               → #c94a4a  (Soft Red)
+# Flagship Conference             → #2e7d32 (Deep Green)
+# Conference (General)            → #2f7f7f (Teal)
+# Workshop / Symposium            → #6a5acd (Muted Purple)
+# Preprint / arXiv                → #7a7a7a (Gray)
+# Under Review / In Preparation   → #b0b0b0 (Light Gray)
+# AI / ML Venue                   → #3f51b5 (Indigo)
+# =========================
 
-"PhysRev":
-  url: https://journals.aps.org/
+#"AJP":
+#  url: https://aapt.scitation.org/journal/ajp
+#  color: "#00369f"
 
-"Vision":
-  color: "#009f36"
+"ACC":
+  color: "#2e7d32"
+
+"MECC":
+  color: "#2e7d32"
+
+"LCSS":
+  color: "#c94a4a"
+
+"LDSC":
+  color: "#c94a4a"
+
+"RAL":
+  color: "#c94a4a"
+
+"TMech":
+  color: "#8b1e1e"
+  

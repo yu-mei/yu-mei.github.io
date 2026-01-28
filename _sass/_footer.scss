@@ -33,14 +33,3 @@ footer.sticky-bottom {
     text-align: center;
   }
 }
-
-.clustrmaps-footer img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease, opacity 0.3s ease;
-}
-
-.clustrmaps-footer img:hover {
-  filter: grayscale(0%);
-  opacity: 1.0;
-}
-

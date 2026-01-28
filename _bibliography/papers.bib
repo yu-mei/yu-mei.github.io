@@ -115,3 +115,65 @@
   video = {https://www.youtube.com/watch?v=yTN6vKkndDg},
   selected  = {false}
 }
+
+@article{shin2025error,
+  title={Error compensation in a redundant system during 'failure' of individual motor elements},
+  author={Shin, Narae and Mei, Yu and Tan, Xiaobo and Srivastava, Vaibhav and Ranganathan, Rajiv},
+  journal={Experimental Brain Research},
+  volume={243},
+  number={2},
+  pages={46},
+  year={2025},
+  publisher={Springer},
+
+  abstract={A characteristic feature of redundancy in the motor system is the ability to compensate for the failure of individual motor elements without affecting task performance. In this study, we examined the pattern and variability in error compensation between motor elements during a virtual task. Participants performed a redundant cursor control task with finger movements. In some conditions, we induced ‘failure’ by using a haptic glove to apply forces to constrain the motion of one of four fingers (index, middle, ring, or little). Our results showed that (i) other fingers increased their range of motion to compensate for the failure of a specific finger, with most of this compensation coming from non-adjacent fingers, and (ii) there was greater trial-to-trial variation in how the task was achieved as indexed by the higher null space variability when the middle and ring fingers were constrained. These results highlight the key role of the interdependence between motor elements in determining error compensation patterns and the variability in coordination patterns.},
+  preview={EBR_Narae.jpg},
+  doi = {10.1007/s00221-024-06987-5},
+  selected  = {false}
+}
+
+@inproceedings{mei2025fast,
+  title = {Fast Online Adaptive Neural MPC via Meta-Learning},
+  author = {Mei, Yu and Zhou, Xinyu and Yu, Shuyang and Srivastava, Vaibhav and Tan, Xiaobo},
+  booktitle = {MECC},
+  year = {2025},
+
+  abstract = {Data-driven model predictive control (MPC) has shown strong potential for improving control performance under model uncertainties. However, many existing approaches rely on extensive offline data collection and computationally expensive training, which limits their ability to adapt online. This paper presents a fast online adaptive MPC framework that integrates neural networks with Model-Agnostic Meta-Learning (MAML) to enable few-shot adaptation of residual dynamics. By capturing discrepancies between nominal and true system behavior using minimal online data and gradient steps, the proposed method achieves rapid model correction. The meta-learned residual models are embedded into a computationally efficient L4CasADi-based MPC pipeline, improving prediction accuracy and real-time control performance. Simulation studies on a cart-pole system and a 2D quadrotor demonstrate significant gains in adaptation speed and accuracy compared to nominal MPC and nominal MPC augmented with a freshly initialized neural network.},
+  preview={MECC_Meta.jpg},
+  doi = {10.1016/j.ifacol.2025.12.266},
+  slides = {MECC2025_Meta_short.pdf},
+  video = {https://www.youtube.com/watch?v=4K2QeBxWcWA},
+  code = {https://github.com/yu-mei/MetaResidual-MPC},
+  selected  = {true}
+}
+
+@inproceedings{mei2025fast,
+  title = {Learning-Based Modeling of Soft Actuators Using Euler Spiral-Inspired Curvature},
+  author = {Mei, Yu and Yuan, Shangyuan and Qi, Xinda and Fairchild, Preston and Tan, Xiaobo},
+  booktitle = {MECC},
+  year = {2025},
+
+  abstract = {Soft robots, distinguished by their inherent compliance and continuum structures, present unique modeling challenges, especially when subjected to significant external loads such as gravity and payloads. In this study, we introduce an innovative data-driven modeling framework leveraging an Euler spiral-inspired shape representations to accurately describe the complex shapes of soft continuum actuators. Based on this representation, we develop neural network-based forward and inverse models to effectively capture the nonlinear behavior of a fiber-reinforced pneumatic bending actuator. Our forward model accurately predicts the actuator's deformation given inputs of pressure and payload, while the inverse model reliably estimates payloads from observed actuator shapes and known pressure inputs. Comprehensive experimental validation demonstrates the effectiveness and accuracy of our proposed approach. Notably, the augmented Euler spiral-based forward model achieves low average positional prediction errors of 3.38%, 2.19%, and 1.93% of the actuator length at the one-third, two-thirds, and tip positions, respectively. Furthermore, the inverse model demonstrates precision of estimating payloads with an average error as low as 0.72% across the tested range. These results underscore the potential of our method to significantly enhance the accuracy and predictive capabilities of modeling frameworks for soft robotic systems.},
+  preview={MECC_Euler.png},
+  doi = {10.1016/j.ifacol.2025.12.222},
+  slides = {MECC2025_Euler_short.pdf},
+  selected  = {true}
+}
+
+@article{yuan2025aft,
+  title={AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots},
+  author={Yuan, Shangyuan and Fairchild, Preston and Mei, Yu and Zhou, Xinyu and Tan, Xiaobo},
+  journal={IEEE Robotics and Automation Letters},
+  volume={11},
+  number={2},
+  pages={1106--1113},
+  year={2025},
+  publisher={IEEE},
+
+  abstract = {Accurate shape reconstruction is essential for precise control and reliable operation of soft robots. Compared to sensor-based approaches, vision-based methods offer advantages in cost, simplicity, and ease of deployment. However, existing vision-based methods often rely on complex camera setups, specific backgrounds, or large-scale training datasets, limiting their practicality in real-world scenarios. In this work, we propose a vision-based, markerless, and training-free framework for soft robotic shape reconstruction that directly leverages the natural surface appearance of the robot. These surface features act as implicit visual markers, enabling a hierarchical matching strategy that decouples local partition alignment from global kinematic optimization. Requiring only an initial 3D reconstruction and kinematic alignment, our method achieves real-time shape tracking across diverse environments while maintaining robustness to occlusions and variations in camera viewpoints. Experimental validation on a continuum soft robot demonstrates an average tip error of 2.6% during real-time operation, as well as stable performance in practical closed-loop control tasks. These results highlight the potential of the proposed approach for reliable, low-cost deployment in dynamic real-world settings.},
+  preview={RAL_Yuan.jpg},
+  doi = {10.1109/LRA.2025.3640973},
+  video = {https://www.youtube.com/watch?v=UGoC8ARU2cE},
+  selected  = {false}
+}
+

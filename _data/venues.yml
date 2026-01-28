@@ -5,6 +5,7 @@
 # Journal (General)               → #c94a4a  (Soft Red)
 # Flagship Conference             → #2e7d32 (Deep Green)
 # Conference (General)            → #2f7f7f (Teal)
+# Conference (General)            → #4caf50  (Green)
 # Workshop / Symposium            → #6a5acd (Muted Purple)
 # Preprint / arXiv                → #7a7a7a (Gray)
 # Under Review / In Preparation   → #b0b0b0 (Light Gray)
@@ -34,7 +35,7 @@
   color: "#8b1e1e"
 
 "Journal":
-  color: "#8b1e1e"
+  color: "#c94a4a"
 
 "Conference":
-  color: "#2e7d32"
+  color: "#4caf50"

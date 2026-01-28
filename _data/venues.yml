@@ -11,9 +11,9 @@
 # AI / ML Venue                   → #3f51b5 (Indigo)
 # =========================
 
-#"AJP":
-#  url: https://aapt.scitation.org/journal/ajp
-#  color: "#00369f"
+"AJP":
+  url: https://aapt.scitation.org/journal/ajp
+  color: "#00369f"
 
 "ACC":
   color: "#2e7d32"

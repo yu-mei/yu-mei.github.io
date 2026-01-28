@@ -123,8 +123,18 @@ layout: default
       </div>
     {% endif %}
 
+    <!-- ClustrMaps Widget -->
+    <div class="clustrmaps-widget" style="margin-top: 16px; text-align: center;">
+      <script
+        type="text/javascript"
+        id="clustrmaps"
+        src="//cdn.clustrmaps.com/map_v2.js?d=HFUgaEXYKozR95L_iXzdtfwp1v7KSDxDzP2xl1FWJdw&cl=ffffff&w=240"
+      ></script>
+    </div>
+
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
       {% include newsletter.liquid center=true %}
     {% endif %}
+
   </article>
 </div>

@@ -1,3 +1,12 @@
+---
+layout: cv
+permalink: /cv/
+title: CV
+nav: true
+nav_order: 4
+cv_pdf: /assets/pdf/Resume_YuMei_Academic_20260123.pdf
+---
+
 <!-- ---
 layout: cv
 permalink: /cv/
@@ -9,12 +18,3 @@ description: This is a description of the page. You can modify it in '_pages/cv.
 toc:
   sidebar: left
 --- -->
-
----
-layout: cv
-permalink: /cv/
-title: CV
-nav: true
-nav_order: 4
-cv_pdf: /assets/pdf/Resume_YuMei_Academic_20260123.pdf
----

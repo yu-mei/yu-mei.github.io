@@ -6,8 +6,6 @@ nav: true
 nav_order: 4
 ---
 
-<div class="services-page" markdown="1">
-
 ### Invited Reviewer
 ---
 
@@ -100,4 +98,3 @@ nav_order: 4
   </tr>
 </table>
 
-</div>

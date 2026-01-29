@@ -278,58 +278,46 @@ a.award-link:focus {
 }
 
 /* ================================
-   Services page vertical spacing
+   Services page: table layout (name left, year right)
    ================================ */
 
-.services-page {
-
-  /* --------------------------------
-     Section titles (## Journals, etc.)
-     --------------------------------
-     Controls the vertical space ABOVE and BELOW each section heading.
-     Increase margin-top to add more breathing room before a new section.
-     Increase margin-bottom to push content (divider) farther down.
-  */
-  h2 {
-    margin-top: 3.5rem;     // ↑ Space BEFORE section title (main knob)
-    margin-bottom: 0.2rem;  // ↓ Space AFTER section title
-  }
-
-  /* --------------------------------
-     Divider line (--- → <hr>)
-     --------------------------------
-     Controls spacing around the horizontal rule.
-     margin-bottom is the key value to separate title from list content.
-  */
-  hr {
-    margin-top: 0.2rem;     // Space between title and divider
-    margin-bottom:0.8rem;  // Space between divider and list items
-  }
-
-  /* ================================
-    Services page: flex-aligned years
-    ================================ */
-
-  .services-page .services-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2.0rem;
-  }
-
-  .services-page .services-table td {
-    padding: 0.2rem 0;
-    vertical-align: top;
-  }
-
-  .services-page .services-year {
-    text-align: right;
-    minimize: auto;
-    white-space: nowrap;   // keep “2024 – 2025” on one line
-    padding-left: 1.5rem;
-    font-style: italic;    // matches your screenshot feel
-  }
-
+.services-page .services-table {
+  width: 100%;                 /* use full content width so year can go far right */
+  border-collapse: collapse;
+  margin: 0.5rem 0 2.2rem 0;    /* spacing after each table block */
 }
+
+.services-page .services-table td {
+  padding: 0.25rem 0;          /* vertical spacing between rows */
+  vertical-align: top;         /* long journal names start at same top line */
+}
+
+/* Left column (the item text) */
+.services-page .services-table td:first-child {
+  padding-right: 4rem;         /* ↑ main knob: increase gap between text and year */
+}
+
+/* Right column (the year) */
+.services-page .services-year {
+  text-align: right;           /* align year to the right edge */
+  white-space: nowrap;         /* keep “2024 – 2025” on one line */
+  width: 1%;                   /* shrink-to-fit: keeps year column tight */
+  font-style: italic;          /* optional, similar to CV style */
+  color: var(--global-text-color); /* or #444 if you want it lighter */
+  padding-left: 1rem;          /* a little breathing room from text column */
+}
+
+/* Optional: tighten space between ### title and table */
+.services-page h3 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Optional: divider line under each ### looks cleaner */
+.services-page h3 + .services-table {
+  margin-top: 0.2rem;
+}
+
 
 
 

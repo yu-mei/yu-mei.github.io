@@ -294,7 +294,19 @@ a.award-link:focus {
 
 /* Left column (the item text) */
 .services-page .services-table td:first-child {
-  padding-right: 4rem;         /* ↑ main knob: increase gap between text and year */
+  position: relative;
+  padding-left: 1.4rem;   /* space for bullet */
+  padding-right: 4rem;    /* space before year */
+}
+
+/* Bullet symbol */
+.services-page .services-table td:first-child::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 1.2em;
+  line-height: 1;
 }
 
 /* Right column (the year) */
@@ -317,6 +329,10 @@ a.award-link:focus {
 .services-page h3 + .services-table {
   margin-top: 0.2rem;
 }
+
+
+
+
 
 
 

@@ -310,31 +310,24 @@ a.award-link:focus {
     Services page: flex-aligned years
     ================================ */
 
-  .services-page ul {
-    padding-left: 1.2rem;
+  .services-page .services-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2.0rem;
   }
 
-  .services-page li {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;  // ← KEY: push year to the right
-    gap: 2.5rem;                     // ← horizontal space between text & year
-    margin-bottom: 0.45rem;
+  .services-page .services-table td {
+    padding: 0.2rem 0;
+    vertical-align: top;
   }
 
-  /* Left side text */
-  .services-page li::marker {
-    font-weight: normal;
+  .services-page .services-year {
+    text-align: right;
+    minimize: auto;
+    white-space: nowrap;   // keep “2024 – 2025” on one line
+    padding-left: 1.5rem;
+    font-style: italic;    // matches your screenshot feel
   }
-
-  /* Right-aligned year */
-  .services-page .svc-year {
-    white-space: nowrap;
-    font-style: italic;   // CV-like
-    color: #444;
-    flex-shrink: 0;       // prevent wrapping
-  }
-
 
 }
 

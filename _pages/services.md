@@ -8,35 +8,99 @@ nav_order: 4
 
 <div class="services-page" markdown="1">
 
-### Invited Reviewer
+## PROFESSIONAL SERVICE AND MEMBERSHIP
+
 ---
 
-- IEEE/ASME Transactions on Mechatronics <span class="svc-year">2025</span>
-- Robotics and Autonomous Systems <span class="svc-year">2025</span>
-- Nonlinear Dynamics <span class="svc-year">2025</span>
-- IEEE Sensors Journal <span class="svc-year">2025</span>
-- Scientific Reports <span class="svc-year">2025</span>
-- ASME Journal of Dynamic Systems, Measurement and Control <span class="svc-year">2025</span>
-- Frontiers of Robots and AI <span class="svc-year">2024</span>
-- International Journal of Intelligent Transportation Systems Research <span class="svc-year">2025</span>
-- IEEE/ASME Int. Conf. on Advanced Intelligent Mechatronics (AIM) <span class="svc-year">2025</span>
-- IEEE Int. Conf. on Rehabilitation Robotics (ICORR) <span class="svc-year">2025</span>
-- Modeling, Estimation, and Control Conf. (MECC) <span class="svc-year">2024–2025</span>
-- IEEE-RAS Int. Conf. on Soft Robotics (RoboSoft) <span class="svc-year">2024</span>
-- American Control Conference (ACC) <span class="svc-year">2023</span>
+### Invited Reviewer
+
+<table class="services-table">
+  <tr>
+    <td>1.&nbsp; IEEE/ASME Transactions on Mechatronics</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>2.&nbsp; Robotics and Autonomous Systems</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>3.&nbsp; Nonlinear Dynamics</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>4.&nbsp; IEEE Sensors Journal</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>5.&nbsp; Scientific Reports</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>6.&nbsp; ASME Journal of Dynamic Systems, Measurement and Control</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>7.&nbsp; Frontiers of Robots and AI</td>
+    <td class="services-year">2024</td>
+  </tr>
+  <tr>
+    <td>8.&nbsp; International Journal of Intelligent Transportation Systems Research</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>9.&nbsp; IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>10.&nbsp; IEEE International Conference on Rehabilitation Robotics (ICORR)</td>
+    <td class="services-year">2025</td>
+  </tr>
+  <tr>
+    <td>11.&nbsp; Modeling, Estimation, and Control Conference (MECC)</td>
+    <td class="services-year">2024, 2025</td>
+  </tr>
+  <tr>
+    <td>12.&nbsp; IEEE-RAS International Conference on Soft Robotics (RoboSoft)</td>
+    <td class="services-year">2024</td>
+  </tr>
+  <tr>
+    <td>13.&nbsp; American Control Conference (ACC)</td>
+    <td class="services-year">2023</td>
+  </tr>
+</table>
 
 ### Student Services
----
 
-- Student Representative, Engineering Graduate Studies Committee, MSU <span class="svc-year">2024–2025</span>
-- Vice Chair, IEEE MSU Student Branch <span class="svc-year">2023–2024</span>
+<table class="services-table">
+  <tr>
+    <td>1.&nbsp; Student Representative, Engineering Graduate Studies Committee, MSU</td>
+    <td class="services-year">2024 – 2025</td>
+  </tr>
+  <tr>
+    <td>2.&nbsp; Vice Chair, IEEE MSU Student Branch</td>
+    <td class="services-year">2023 – 2024</td>
+  </tr>
+</table>
 
 ### Professional Membership
----
 
-- Graduate Student Member, IEEE <span class="svc-year">2021–Present</span>
-- Student Member, ASME <span class="svc-year">2024–Present</span>
-- Member, IEEE Young Professionals <span class="svc-year">2022–Present</span>
-- Member, IEEE Robotics and Automation Society <span class="svc-year">2023–Present</span>
+<table class="services-table">
+  <tr>
+    <td>1.&nbsp; Graduate Student Member, IEEE</td>
+    <td class="services-year">2021 – Present</td>
+  </tr>
+  <tr>
+    <td>2.&nbsp; Student Member, ASME</td>
+    <td class="services-year">2024 – Present</td>
+  </tr>
+  <tr>
+    <td>3.&nbsp; Member, IEEE Young Professionals</td>
+    <td class="services-year">2022 – Present</td>
+  </tr>
+  <tr>
+    <td>4.&nbsp; Member, IEEE Robotics and Automation Society</td>
+    <td class="services-year">2023 – Present</td>
+  </tr>
+</table>
 
 </div>

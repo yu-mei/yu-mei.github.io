@@ -1,0 +1,22 @@
+/* ================================
+   Services page section spacing
+   ================================ */
+
+.services-page {
+
+  .services-section-title {
+    margin-top: 3rem;     // space BEFORE section
+    margin-bottom: 1.2rem;
+    font-size: 2.1rem;    // optional: slightly larger
+    font-weight: 500;
+  }
+
+  .services-divider {
+    margin-top: 0.8rem;
+    margin-bottom: 2rem; // space AFTER divider
+  }
+
+  ul {
+    margin-bottom: 3rem; // space AFTER item list
+  }
+}

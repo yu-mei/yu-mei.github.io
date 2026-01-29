@@ -277,4 +277,29 @@ a.award-link:focus {
   text-decoration: underline;
 }
 
+/* ================================
+   Services page vertical spacing
+   ================================ */
+
+.services-page {
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.6rem;
+  }
+
+  hr {
+    margin-top: 1.1rem;
+    margin-bottom: 2.6rem;
+  }
+
+  ul {
+    margin-bottom: 3.5rem;
+  }
+
+  /* Optional: first title not too far down */
+  h2:first-of-type {
+    margin-top: 1.8rem;
+  }
+}
+
 

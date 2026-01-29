@@ -6,6 +6,8 @@ nav: true
 nav_order: 5
 ---
 
+<div class="services-page">
+
 ## Journals
 
 ---
@@ -27,3 +29,5 @@ nav_order: 5
 
 - Member, IEEE RAS
 - Member, ASME
+
+</div>

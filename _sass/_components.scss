@@ -307,29 +307,34 @@ a.award-link:focus {
   }
 
   /* ================================
-    Services: right-aligned years
+    Services page: flex-aligned years
     ================================ */
 
   .services-page ul {
-    list-style: disc;
     padding-left: 1.2rem;
   }
 
   .services-page li {
-    position: relative;
-    padding-right: 7rem;     // ↑ controls horizontal gap to the year
-    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;  // ← KEY: push year to the right
+    gap: 2.5rem;                     // ← horizontal space between text & year
+    margin-bottom: 0.45rem;
   }
 
-  /* Year on the right */
-  .services-page .svc-year {
-    position: absolute;
-    right: 0;
-    top: 0;
-    white-space: nowrap;
-    font-style: italic;      // optional, CV-like
-    color: #444;             // optional subtle tone
+  /* Left side text */
+  .services-page li::marker {
+    font-weight: normal;
   }
+
+  /* Right-aligned year */
+  .services-page .svc-year {
+    white-space: nowrap;
+    font-style: italic;   // CV-like
+    color: #444;
+    flex-shrink: 0;       // prevent wrapping
+  }
+
 
 }
 

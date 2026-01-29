@@ -278,61 +278,65 @@ a.award-link:focus {
 }
 
 /* ================================
-   Services page: table layout (name left, year right)
+   Services page: table layout (item left, year right)
+   + bullet rendered reliably via span
    ================================ */
 
 .services-page .services-table {
-  width: 90%;                 /* use full content width so year can go far right */
+  width: 100%;
   border-collapse: collapse;
-  margin: 0.5rem 0 2.2rem 0;    /* spacing after each table block */
+  margin: 0.5rem 0 2.2rem 0; /* space after each table block */
 }
 
 .services-page .services-table td {
-  padding: 0.25rem 0;          /* vertical spacing between rows */
-  vertical-align: top;         /* long journal names start at same top line */
+  padding: 0.25rem 0;       /* ROW SPACING knob */
+  vertical-align: top;
 }
 
-/* Left column (the item text) */
+/* Gap between item text and the year column */
 .services-page .services-table td:first-child {
-  position: relative;
-  padding-left: 1.4rem;   /* space for bullet */
-  padding-right: 4rem;    /* space before year */
+  padding-right: 4rem;      /* HORIZONTAL GAP knob (try 5–7rem) */
 }
 
-/* Bullet symbol */
-.services-page .services-table td:first-child::before {
+/* Bullet wrapper */
+.services-page .svc-item {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.4rem;     /* BULLET INDENT knob */
+}
+
+/* Bullet (vertically centered) */
+.services-page .svc-item::before {
   content: "•";
   position: absolute;
   left: 0;
-  top: 0.15em;
-  font-size: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);  /* bullet vertical alignment */
+  font-size: 2.0em;             /* bullet size knob */
   line-height: 1;
 }
 
-/* Right column (the year) */
+/* Year column */
 .services-page .services-year {
-  text-align: right;           /* align year to the right edge */
-  white-space: nowrap;         /* keep “2024 – 2025” on one line */
-  width: 1%;                   /* shrink-to-fit: keeps year column tight */
-  font-style: italic;          /* optional, similar to CV style */
-  color: var(--global-text-color); /* or #444 if you want it lighter */
-  padding-left: 1rem;          /* a little breathing room from text column */
+  text-align: right;
+  white-space: nowrap;
+  width: 1%;
+  font-style: italic;        /* remove if you don’t want italics */
+  color: var(--global-text-color);
+  padding-left: 1rem;
 }
 
-/* Optional: tighten space between ### title and table */
+/* Subsection titles (### ...) */
 .services-page h3 {
-  margin-top: 2.2rem;
+  margin-top: 2.2rem;        /* SECTION GAP knob */
   margin-bottom: 0.6rem;
 }
 
-/* Optional: divider line under each ### looks cleaner */
-.services-page h3 + .services-table {
-  margin-top: 0.2rem;
+/* Divider under each ### (because you used ---) */
+.services-page h3 + hr {
+  margin-top: 0.6rem;        /* divider spacing knobs */
+  margin-bottom: 1.2rem;
 }
-
-
-
-
 
 
 

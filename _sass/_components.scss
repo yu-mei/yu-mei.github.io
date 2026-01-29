@@ -282,24 +282,50 @@ a.award-link:focus {
    ================================ */
 
 .services-page {
+
+  /* --------------------------------
+     Section titles (## Journals, etc.)
+     --------------------------------
+     Controls the vertical space ABOVE and BELOW each section heading.
+     Increase margin-top to add more breathing room before a new section.
+     Increase margin-bottom to push content (divider) farther down.
+  */
   h2 {
-    margin-top: 3.5rem;
-    margin-bottom: 1.6rem;
+    margin-top: 3.5rem;     // ↑ Space BEFORE section title (main knob)
+    margin-bottom: 1.6rem;  // ↓ Space AFTER section title
   }
 
+  /* --------------------------------
+     Divider line (--- → <hr>)
+     --------------------------------
+     Controls spacing around the horizontal rule.
+     margin-bottom is the key value to separate title from list content.
+  */
   hr {
-    margin-top: 1.1rem;
-    margin-bottom: 2.6rem;
+    margin-top: 0.6rem;     // Space between title and divider
+    margin-bottom:0.8rem;  // Space between divider and list items
   }
 
+  /* --------------------------------
+     Section content (bullet lists)
+     --------------------------------
+     Adds vertical separation between different sections.
+     Increase this if sections feel visually cramped.
+  */
   ul {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3.5rem;  // Space AFTER each section’s list
   }
 
-  /* Optional: first title not too far down */
+  /* --------------------------------
+     First section adjustment
+     --------------------------------
+     Prevents the first section from being pushed too far down
+     from the page title ("Services").
+  */
   h2:first-of-type {
-    margin-top: 1.8rem;
+    margin-top: 1.8rem;     // Smaller top margin for first section only
   }
 }
+
 
 

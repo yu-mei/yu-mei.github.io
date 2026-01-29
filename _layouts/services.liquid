@@ -1,25 +1,7 @@
-<div class="post services-page">
-  <article>
-    {% if page.sections %}
-      {% for s in page.sections %}
-        <h2 class="services-section-title">{{ s.title }}</h2>
-        <hr class="services-divider">
+---
+layout: page
+---
 
-        {% if s.items %}
-          <ul>
-            {% for it in s.items %}
-              <li>
-                {% if it.role %}<strong>{{ it.role }}</strong>{% endif %}
-                {% if it.role and it.text %}, {% endif %}
-                {{ it.text }}
-                {% if it.link %}
-                  <a href="{{ it.link }}" target="_blank" rel="noopener">Link</a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  </article>
+<div class="services-page">
+  {{ content }}
 </div>

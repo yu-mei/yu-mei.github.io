@@ -9,7 +9,7 @@ nav_order: 4
 <div class="services-page" markdown="1">
 
 ### Invited Reviewer
-
+---
 <table class="services-table">
   <tr>
     <td>1.&nbsp; IEEE/ASME Transactions on Mechatronics</td>
@@ -66,7 +66,7 @@ nav_order: 4
 </table>
 
 ### Student Services
-
+---
 <table class="services-table">
   <tr>
     <td>1.&nbsp; Student Representative, Engineering Graduate Studies Committee, MSU</td>
@@ -78,8 +78,9 @@ nav_order: 4
   </tr>
 </table>
 
-### Professional Membership
 
+### Professional Membership
+---
 <table class="services-table">
   <tr>
     <td>1.&nbsp; Graduate Student Member, IEEE</td>

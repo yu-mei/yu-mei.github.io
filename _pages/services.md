@@ -8,11 +8,8 @@ nav_order: 4
 
 <div class="services-page" markdown="1">
 
-## PROFESSIONAL SERVICE AND MEMBERSHIP
-
----
-
 ### Invited Reviewer
+---
 
 <table class="services-table">
   <tr>
@@ -70,6 +67,7 @@ nav_order: 4
 </table>
 
 ### Student Services
+---
 
 <table class="services-table">
   <tr>
@@ -83,6 +81,7 @@ nav_order: 4
 </table>
 
 ### Professional Membership
+---
 
 <table class="services-table">
   <tr>

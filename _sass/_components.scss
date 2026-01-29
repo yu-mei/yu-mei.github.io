@@ -306,15 +306,17 @@ a.award-link:focus {
   padding-left: 1.4rem;   /* space reserved for bullet */
 }
 
-/* Bullet symbol (reliable because it's on .svc-item, not on td) */
+/* Bullet symbol (vertically centered) */
 .services-page .svc-item::before {
   content: "•";
   position: absolute;
   left: 0;
-  top: 0.15em;
+  top: 50%;                    /* anchor to middle */
+  transform: translateY(-50%); /* true vertical centering */
   font-size: 1.2em;
   line-height: 1;
 }
+
 
 /* Right column (year): right-aligned and never wraps */
 .services-page .services-year {

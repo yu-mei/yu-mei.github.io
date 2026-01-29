@@ -306,26 +306,34 @@ a.award-link:focus {
     margin-bottom:0.8rem;  // Space between divider and list items
   }
 
-  /* --------------------------------
-     Section content (bullet lists)
-     --------------------------------
-     Adds vertical separation between different sections.
-     Increase this if sections feel visually cramped.
-  */
-  ul {
-    margin-bottom: 3.5rem;  // Space AFTER each section’s list
+  /* ================================
+    Services: right-aligned years
+    ================================ */
+
+  .services-page ul {
+    list-style: disc;
+    padding-left: 1.2rem;
   }
 
-  /* --------------------------------
-     First section adjustment
-     --------------------------------
-     Prevents the first section from being pushed too far down
-     from the page title ("Services").
-  */
-  h2:first-of-type {
-    margin-top: 1.8rem;     // Smaller top margin for first section only
+  .services-page li {
+    position: relative;
+    padding-right: 7rem;     // ↑ controls horizontal gap to the year
+    margin-bottom: 0.4rem;
   }
+
+  /* Year on the right */
+  .services-page .svc-year {
+    position: absolute;
+    right: 0;
+    top: 0;
+    white-space: nowrap;
+    font-style: italic;      // optional, CV-like
+    color: #444;             // optional subtle tone
+  }
+
 }
+
+
 
 
 

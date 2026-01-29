@@ -278,66 +278,56 @@ a.award-link:focus {
 }
 
 /* ================================
-   Services page: table layout (item left, year right)
-   + bullet rendered reliably via span
+   Services page: table layout (name left, year right)
    ================================ */
 
-/* Make table take full content width so year can truly reach the right edge */
 .services-page .services-table {
-  width: 100%;
+  width: 90%;                 /* use full content width so year can go far right */
   border-collapse: collapse;
-  margin: 0.5rem 0 2.2rem 0; /* spacing after each table block */
+  margin: 0.5rem 0 2.2rem 0;    /* spacing after each table block */
 }
 
 .services-page .services-table td {
-  padding: 0.25rem 0;     /* vertical spacing between rows */
-  vertical-align: top;    /* long names start at same top line */
+  padding: 0.25rem 0;          /* vertical spacing between rows */
+  vertical-align: top;         /* long journal names start at same top line */
 }
 
-/* Left column: create a consistent gap before the year column */
+/* Left column (the item text) */
 .services-page .services-table td:first-child {
-  padding-right: 4rem;    /* MAIN knob: increase gap between item text and year */
-}
-
-/* Wrap item text in a span so ::before works reliably across browsers/themes */
-.services-page .svc-item {
   position: relative;
-  display: inline-block;  /* REQUIRED for stable pseudo-element positioning */
-  padding-left: 1.4rem;   /* space reserved for bullet */
+  padding-left: 1.4rem;   /* space for bullet */
+  padding-right: 4rem;    /* space before year */
 }
 
-/* Bullet symbol (vertically centered) */
-.services-page .svc-item::before {
-  content: "●";
+/* Bullet symbol */
+.services-page .services-table td:first-child::before {
+  content: "•";
   position: absolute;
   left: 0;
-  top: 50%;                    /* anchor to middle */
-  transform: translateY(-50%); /* true vertical centering */
+  top: 0.15em;
   font-size: 1.2em;
   line-height: 1;
 }
 
-
-/* Right column (year): right-aligned and never wraps */
+/* Right column (the year) */
 .services-page .services-year {
-  text-align: right;
-  white-space: nowrap;    /* keep “2024 – 2025” on one line */
-  width: 1%;              /* shrink-to-fit: keeps year column tight */
-  font-style: italic;     /* optional, CV-like */
+  text-align: right;           /* align year to the right edge */
+  white-space: nowrap;         /* keep “2024 – 2025” on one line */
+  width: 1%;                   /* shrink-to-fit: keeps year column tight */
+  font-style: italic;          /* optional, similar to CV style */
   color: var(--global-text-color); /* or #444 if you want it lighter */
-  padding-left: 1rem;     /* small breathing room from text column */
+  padding-left: 1rem;          /* a little breathing room from text column */
 }
 
-/* Spacing around the subsection titles (### ...) */
+/* Optional: tighten space between ### title and table */
 .services-page h3 {
   margin-top: 2.2rem;
   margin-bottom: 0.6rem;
 }
 
-/* Your divider is an <hr> because you used --- under ### */
-.services-page h3 + hr {
-  margin-top: 0.6rem;
-  margin-bottom: 1.2rem;
+/* Optional: divider line under each ### looks cleaner */
+.services-page h3 + .services-table {
+  margin-top: 0.2rem;
 }
 
 

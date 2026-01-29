@@ -6,7 +6,7 @@ nav: true
 nav_order: 4
 ---
 
-<div class="services-page">
+<div class="services-page" markdown="1">
 
 ## Journals
 

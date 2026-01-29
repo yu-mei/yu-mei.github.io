@@ -3,7 +3,7 @@ layout: cv
 permalink: /cv/
 title: CV
 nav: true
-nav_order: 4
+nav_order: 5
 cv_pdf: /assets/pdf/Resume_YuMei_Academic_20260123.pdf
 ---
 

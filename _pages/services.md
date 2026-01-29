@@ -13,55 +13,55 @@ nav_order: 4
 
 <table class="services-table">
   <tr>
-    <td>IEEE/ASME Transactions on Mechatronics</td>
+    <td><span class="svc-item">IEEE/ASME Transactions on Mechatronics</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>Robotics and Autonomous Systems</td>
+    <td><span class="svc-item">Robotics and Autonomous Systems</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>Nonlinear Dynamics</td>
+    <td><span class="svc-item">Nonlinear Dynamics</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>IEEE Sensors Journal</td>
+    <td><span class="svc-item">IEEE Sensors Journal</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>Scientific Reports</td>
+    <td><span class="svc-item">Scientific Reports</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>ASME Journal of Dynamic Systems, Measurement and Control</td>
+    <td><span class="svc-item">ASME Journal of Dynamic Systems, Measurement and Control</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>Frontiers of Robots and AI</td>
+    <td><span class="svc-item">Frontiers of Robots and AI</span></td>
     <td class="services-year">2024</td>
   </tr>
   <tr>
-    <td>International Journal of Intelligent Transportation Systems Research</td>
+    <td><span class="svc-item">International Journal of Intelligent Transportation Systems Research</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)</td>
+    <td><span class="svc-item">IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>IEEE International Conference on Rehabilitation Robotics (ICORR)</td>
+    <td><span class="svc-item">IEEE International Conference on Rehabilitation Robotics (ICORR)</span></td>
     <td class="services-year">2025</td>
   </tr>
   <tr>
-    <td>Modeling, Estimation, and Control Conference (MECC)</td>
+    <td><span class="svc-item">Modeling, Estimation, and Control Conference (MECC)</span></td>
     <td class="services-year">2024, 2025</td>
   </tr>
   <tr>
-    <td>IEEE-RAS International Conference on Soft Robotics (RoboSoft)</td>
+    <td><span class="svc-item">IEEE-RAS International Conference on Soft Robotics (RoboSoft)</span></td>
     <td class="services-year">2024</td>
   </tr>
   <tr>
-    <td>American Control Conference (ACC)</td>
+    <td><span class="svc-item">American Control Conference (ACC)</span></td>
     <td class="services-year">2023</td>
   </tr>
 </table>
@@ -71,13 +71,13 @@ nav_order: 4
 
 <table class="services-table">
   <tr>
-    <td>Student Representative, Engineering Graduate Studies Committee, MSU</td>
+    <td><span class="svc-item">Student Representative, Engineering Graduate Studies Committee, MSU</span></td>
     <td class="services-year">2024 – 2025</td>
   </tr>
   <tr>
-    <td>Vice Chair, IEEE MSU Student Branch</td>
+    <td><span class="svc-item">Vice Chair, IEEE MSU Student Branch</span></td>
     <td class="services-year">2023 – 2024</td>
   </tr>
 </table>
 
-
+</div>

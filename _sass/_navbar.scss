@@ -7,21 +7,25 @@
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
+  // background-color: var(--global-bg-color);
+  background-color: var(--global-spartan-color);
   opacity: 0.95;
 }
 
 .navbar .dropdown-menu,
 .btn-group.dropdown .dropdown-menu {
-  background-color: var(--global-bg-color);
+  //background-color: var(--global-bg-color);
+  background-color: var(--global-spartan-color);
   border: 1px solid var(--global-divider-color);
 
   a:not(.active) {
-    color: var(--global-text-color);
+    //color: var(--global-text-color);
+    color: var(--global-nav-text-color);
   }
 
   a:hover {
-    color: var(--global-hover-color);
+    //color: var(--global-hover-color);
+    color: var(--global-nav-hover-text-color);
   }
 
   .dropdown-divider {
@@ -30,21 +34,27 @@
 }
 
 .dropdown-item {
-  color: var(--global-text-color);
+  //color: var(--global-text-color);
+  color: var(--global-nav-text-color);
 
   &:hover {
-    color: var(--global-hover-color);
-    background-color: var(--global-bg-color);
+    //color: var(--global-hover-color);
+    color: var(--global-nav-hover-text-color);
+    //background-color: var(--global-bg-color);
+    background-color: var(--global-spartan-color);
   }
 }
 
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: var(--global-hover-color);
-  color: var(--global-hover-text-color) !important;
+  //background-color: var(--global-hover-color);
+  background-color: var(--global-spartan-color);
+  //color: var(--global-hover-text-color) !important;
+  color: var(--global-white-color) !important;
 
   &:hover {
-    color: var(--global-hover-text-color);
+    //color: var(--global-hover-text-color);
+    
   }
 }
 

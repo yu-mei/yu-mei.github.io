@@ -28,6 +28,19 @@ nav_order: 4
   <tr>
     <td>
       <span class="svc-item">
+        <a href="https://www.ieee-ras.org/publications/ra-l/"
+            target="_blank"
+            rel="noopener">
+          IEEE Robotics and Automation Letters (RAL)
+        </a>
+      </span>
+    </td>
+    <td class="services-year">2026</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="svc-item">
         <a href="https://www.sciencedirect.com/journal/robotics-and-autonomous-systems"
            target="_blank"
            rel="noopener">

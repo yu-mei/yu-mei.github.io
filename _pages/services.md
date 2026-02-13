@@ -18,7 +18,7 @@ nav_order: 4
         <a href="https://www.ieee-asme-mechatronics.info/"
            target="_blank"
            rel="noopener">
-          IEEE/ASME Transactions on Mechatronics
+          IEEE/ASME Transactions on Mechatronics (TMech)
         </a>
       </span>
     </td>
@@ -44,7 +44,7 @@ nav_order: 4
         <a href="https://www.sciencedirect.com/journal/robotics-and-autonomous-systems"
            target="_blank"
            rel="noopener">
-          Robotics and Autonomous Systems
+          Robotics and Autonomous Systems (RAS)
         </a>
       </span>
     </td>
@@ -96,7 +96,7 @@ nav_order: 4
         <a href="https://asmedigitalcollection.asme.org/dynamicsystems"
            target="_blank"
            rel="noopener">
-          ASME Journal of Dynamic Systems, Measurement and Control
+          ASME Journal of Dynamic Systems, Measurement and Control (JDSMC)
         </a>
       </span>
     </td>

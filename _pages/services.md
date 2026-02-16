@@ -80,10 +80,10 @@ nav_order: 4
   <tr>
     <td>
       <span class="svc-item">
-        <a href="https://www.nature.com/srep/"
+        <a href="https://asmedigitalcollection.asme.org/dynamicsystems"
            target="_blank"
            rel="noopener">
-          Scientific Reports
+          ASME Journal of Dynamic Systems, Measurement and Control (JDSMC)
         </a>
       </span>
     </td>
@@ -93,10 +93,10 @@ nav_order: 4
   <tr>
     <td>
       <span class="svc-item">
-        <a href="https://asmedigitalcollection.asme.org/dynamicsystems"
+        <a href="https://www.nature.com/srep/"
            target="_blank"
            rel="noopener">
-          ASME Journal of Dynamic Systems, Measurement and Control (JDSMC)
+          Scientific Reports
         </a>
       </span>
     </td>

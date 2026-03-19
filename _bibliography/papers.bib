@@ -1,21 +1,46 @@
 ---
 ---
-@article{yuan2025aft,
-  title={AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots},
-  author={Yuan, Shangyuan and Fairchild, Preston and Mei, Yu and Zhou, Xinyu and Tan, Xiaobo},
-  journal={IEEE Robotics and Automation Letters},
-  volume={11},
-  number={2},
-  pages={1106--1113},
-  year={2025},
+
+@article{mei2024simultaneous,
+  title={Simultaneous Shape Reconstruction and Force Estimation of Soft Bending Actuators Using Distributed Inductive Curvature Sensors},
+  author={Mei, Yu and Peng, Lei and Shi, Hongyang and Qi, Xinda and Deng, Yiming and Srivastava, Vaibhav and Tan, Xiaobo},
+  journal={IEEE/ASME Transactions on Mechatronics},
+  volume={29},
+  number={4},
+  pages={2849--2857},
+  year={2024},
   publisher={IEEE},
   abbr = {Journal},
 
-  abstract = {Accurate shape reconstruction is essential for precise control and reliable operation of soft robots. Compared to sensor-based approaches, vision-based methods offer advantages in cost, simplicity, and ease of deployment. However, existing vision-based methods often rely on complex camera setups, specific backgrounds, or large-scale training datasets, limiting their practicality in real-world scenarios. In this work, we propose a vision-based, markerless, and training-free framework for soft robotic shape reconstruction that directly leverages the natural surface appearance of the robot. These surface features act as implicit visual markers, enabling a hierarchical matching strategy that decouples local partition alignment from global kinematic optimization. Requiring only an initial 3D reconstruction and kinematic alignment, our method achieves real-time shape tracking across diverse environments while maintaining robustness to occlusions and variations in camera viewpoints. Experimental validation on a continuum soft robot demonstrates an average tip error of 2.6% during real-time operation, as well as stable performance in practical closed-loop control tasks. These results highlight the potential of the proposed approach for reliable, low-cost deployment in dynamic real-world settings.},
-  preview={RAL_Yuan.jpg},
-  doi = {10.1109/LRA.2025.3640973},
-  video = {https://www.youtube.com/watch?v=UGoC8ARU2cE},
-  selected  = {false}
+  abstract={Soft robots, with their remarkable advantages in various applications, face the critical challenge of embodied perception, encompassing proprioceptive sensing and perceiving unknown environments (exteroception). In this article, we achieve simultaneous continuous shape reconstruction and external force estimation for soft bending actuators using only a proprioceptive curvature sensor. We introduce a novel distributed inductive curvature sensor designed for capturing continuous shape through electromagnetic induction. In addition, we enhance an analytical static model based on the Euler–Bernoulli curved beam theory to predict the shape under pneumatic actuation and external forces. Furthermore, a model-based optimization algorithm is proposed to estimate external forces based on the measured shape. Extensive experimental validation supports the efficacy of the proposed sensor and algorithms.},
+  preview={TMech1.jpg},
+  doi = {10.1109/TMECH.2024.3397825},
+  poster = {Poster_TMech1.pdf},
+  slides = {Slides_TMech1.pdf},
+  video = {https://www.youtube.com/watch?v=0Kpc-y5kq6U},
+  award = {Best Student Paper at AIM2024},
+  selected  = {true}
+}
+
+@article{mei2026bipolar,
+  title={BiPneu: Design and Control of a Bipolar-Pressure Pneumatic System for Soft Robots},
+  author={Mei, Yu and Zhou, Xinyu and Naik, Vedant and Gao, Alan and Tan, Xiaobo},
+  journal={IEEE/ASME Transactions on Mechatronics, to appear},
+  volume={},
+  number={},
+  pages={},
+  year={2026},
+  publisher={IEEE},
+  abbr = {Journal},
+
+  abstract={Positive-negative pressure regulation is critical to soft robotic actuators, enabling large motion ranges and versatile actuation modes. However, achieving high-performance regulation across both pressure polarities remains challenging due to asymmetric inflation–deflation dynamics, valve nonlinearities, and switching-induced flow disturbances. This paper presents BiPneu, a compact and cost-efficient multi-channel bipolar-pressure pneumatic system for soft robots that enables wide-range, accurate, and responsive pressure regulation while providing seamless compatibility with high-level software ecosystems. A dual-mode sliding-mode controller (DM-SMC) with hysteresis-supervised mode selection is proposed based on a hybrid electro-pneumatic model. Extensive simulation and experiments demonstrate the superior performance of DM-SMC in tracking step and sinusoidal pressure references compared with both advanced model predictive controllers and well-tuned PID controllers. Experimental results show average absolute errors of 1.44 kPa in multi-step tests and 4.23 kPa in sinusoidal tracking, corresponding to reductions of 11.9\% and 35.6\% relative to PID control, along with improved control effort, valve switching rate, and transient response. Robustness of DM-SMC is further verified on a bellow actuator with pressure-dependent volume. Finally, BiPneu’s capability is demonstrated via two soft robotic examples, quick ball-maneuvering with a soft parallel manipulator and real-time finite element method (FEM)-based teleoperation of a soft bellows actuator.},
+  preview={TMech2.gif},
+  doi = {},
+  poster = {},
+  slides = {},
+  video = {https://youtu.be/ujWjucfVKs0},
+  award = {},
+  selected  = {true}
 }
 
 @inproceedings{mei2025euler,
@@ -49,36 +74,20 @@
   selected  = {true}
 }
 
-@article{shin2025error,
-  title={Error compensation in a redundant system during 'failure' of individual motor elements},
-  author={Shin, Narae and Mei, Yu and Tan, Xiaobo and Srivastava, Vaibhav and Ranganathan, Rajiv},
-  journal={Experimental Brain Research},
-  volume={243},
-  number={2},
-  pages={46},
-  year={2025},
-  publisher={Springer},
-  abbr = {Journal},
+@inproceedings{mei2023simultaneous,
+  title={Simultaneous Motion and Stiffness Control for Soft Pneumatic Manipulators Based on a Lagrangian-Based Dynamic Model},
+  author={Mei, Yu and Fairchild, Preston and Srivastava, Vaibhav and Cao, Changyong and Tan, Xiaobo},
+  booktitle={ACC},
+  year={2023},
+  abbr = {Conference},
 
-  abstract={A characteristic feature of redundancy in the motor system is the ability to compensate for the failure of individual motor elements without affecting task performance. In this study, we examined the pattern and variability in error compensation between motor elements during a virtual task. Participants performed a redundant cursor control task with finger movements. In some conditions, we induced ‘failure’ by using a haptic glove to apply forces to constrain the motion of one of four fingers (index, middle, ring, or little). Our results showed that (i) other fingers increased their range of motion to compensate for the failure of a specific finger, with most of this compensation coming from non-adjacent fingers, and (ii) there was greater trial-to-trial variation in how the task was achieved as indexed by the higher null space variability when the middle and ring fingers were constrained. These results highlight the key role of the interdependence between motor elements in determining error compensation patterns and the variability in coordination patterns.},
-  preview={EBR_Narae.jpg},
-  doi = {10.1007/s00221-024-06987-5},
-  selected  = {false}
-}
-
-@article{wang2024mechanical,
-  title={Mechanical Design and Data-Enabled Predictive Control of a Planar Soft Robot},
-  author={Wang, Huanqing and Zhang, Kaixiang and Lee, Kyungjoon and Mei, Yu and Zhu, Keyi and Srivastava, Vaibhav and Sheng, Jun and Li, Zhaojian},
-  journal={IEEE Robotics and Automation Letters},
-  year={2024},
-  publisher={IEEE},
-  abbr = {Journal},
-
-  abstract={Soft robots offer a unique combination of flexibility, adaptability, and safety, making them well-suited for a diverse range of applications. However, the inherent complexity of soft robots poses great challenges in their modeling and control. In this letter, we present the mechanical design and data-driven control of a pneumatic-driven soft planar robot. Specifically, we employ a data-enabled predictive control (DeePC) strategy that directly utilizes system input/output data to achieve safe and optimal control, eliminating the need for tedious system identification or modeling. In addition, a dimension reduction technique is introduced into the DeePC framework, resulting in significantly enhanced computational efficiency with minimal to no degradation in control performance. Comparative experiments are conducted to validate the efficacy of DeePC in the control of the fabricated soft robot.},
-  preview={RAL_Wang.jpg},
-  doi = {10.1109/LRA.2024.3434929},
-  video = {https://www.youtube.com/watch?v=yTN6vKkndDg},
-  selected  = {false}
+  abstract={A soft continuum manipulator with tunable stiffness can not only take advantage of high compliance for safe adaptation in unknown environments, but also circumvent the drawbacks of instability and low loading capability. The high nonlinearity of soft manipulators and the strong coupling between actuation and stiffness-tuning make their simultaneous control challenging. In this work, a novel approach to simultaneous control of actuation and stiffness-tuning is proposed for soft pneumatic manipulators. With a piecewise-constant curvature assumption, a Lagrangian-based dynamic model with realistic approximation is used for control design, where the dynamics of the stiffness-tunable mechanism is incorporated. An extended Kalman filter (EKF) is proposed to estimate unmeasurable states including the stiffness and the velocity. A nonlinear model predictive control (NMPC) framework is developed first in the configuration space, and then extended to the task space, for simultaneous motion and stiffness control under inflation and vacuum pressure constraints. Simulation results are presented to support the efficacy of the proposed approach.},
+  preview={ACC2023.gif},
+  doi = {10.23919/ACC55779.2023.10156049},
+  poster = {Poster_ACC2023.pdf},
+  slides = {Slides_ACC2023.pdf},
+  video = {https://www.youtube.com/watch?v=4u4hd4IwhuY},
+  selected  = {true}
 }
 
 @article{qi2024design,
@@ -99,26 +108,75 @@
   selected  = {true}
 }
 
-@article{mei2024simultaneous,
-  title={Simultaneous Shape Reconstruction and Force Estimation of Soft Bending Actuators Using Distributed Inductive Curvature Sensors},
-  author={Mei, Yu and Peng, Lei and Shi, Hongyang and Qi, Xinda and Deng, Yiming and Srivastava, Vaibhav and Tan, Xiaobo},
-  journal={IEEE/ASME Transactions on Mechatronics},
-  volume={29},
-  number={4},
-  pages={2849--2857},
+@article{yuan2025aft,
+  title={AFT: Appearance-Based Feature Tracking for Markerless and Training-Free Shape Reconstruction of Soft Robots},
+  author={Yuan, Shangyuan and Fairchild, Preston and Mei, Yu and Zhou, Xinyu and Tan, Xiaobo},
+  journal={IEEE Robotics and Automation Letters},
+  volume={11},
+  number={2},
+  pages={1106--1113},
+  year={2025},
+  publisher={IEEE},
+  abbr = {Journal},
+
+  abstract = {Accurate shape reconstruction is essential for precise control and reliable operation of soft robots. Compared to sensor-based approaches, vision-based methods offer advantages in cost, simplicity, and ease of deployment. However, existing vision-based methods often rely on complex camera setups, specific backgrounds, or large-scale training datasets, limiting their practicality in real-world scenarios. In this work, we propose a vision-based, markerless, and training-free framework for soft robotic shape reconstruction that directly leverages the natural surface appearance of the robot. These surface features act as implicit visual markers, enabling a hierarchical matching strategy that decouples local partition alignment from global kinematic optimization. Requiring only an initial 3D reconstruction and kinematic alignment, our method achieves real-time shape tracking across diverse environments while maintaining robustness to occlusions and variations in camera viewpoints. Experimental validation on a continuum soft robot demonstrates an average tip error of 2.6% during real-time operation, as well as stable performance in practical closed-loop control tasks. These results highlight the potential of the proposed approach for reliable, low-cost deployment in dynamic real-world settings.},
+  preview={RAL_Yuan.jpg},
+  doi = {10.1109/LRA.2025.3640973},
+  video = {https://www.youtube.com/watch?v=UGoC8ARU2cE},
+  selected  = {false}
+}
+
+@article{shi2023automated,
+  title={Automated Soft Pressure Sensor Array-Based Sea Lamprey Detection Using Machine Learning},
+  author={Shi, Hongyang and Mei, Yu and Gonz{\'a}lez-Afanador, Ian and Chen, Claudia and Miehls, Scott and Holbrook, Christopher and Sepulveda, Nelson and Tan, Xiaobo},
+  journal={IEEE Sensors Journal},
+  volume={23},
+  number={7},
+  pages={7546--7557},
+  year={2023},
+  publisher={IEEE},
+  abbr = {Journal},
+
+  abstract={Sea lamprey, a destructive invasive species in the Great Lakes in North America, is among very few fishes that rely on oral suction during migration and spawning. Recently, soft pressure sensors have been proposed to detect the attachment of sea lamprey as part of the monitoring and control effort. However, human decision is still required for the recognition of patterns in the measured signals. In this article, a novel automated soft pressure sensor array-based sea lamprey detection framework is proposed using object detection convolutional neural networks. First, the resistance measurements of the pressure sensor array are converted to mappings of relative change in resistance. These mappings typically show two different types of patterns under lamprey attachment: a high-pressure circular pattern corresponding to the mouth rim compressed against the sensor (“compression” pattern), and a low-pressure blob corresponding to the partial vacuum region of the sucking mouth (“suction” pattern). Three types of object detection algorithms, single-shot detector (SSD), RetinaNet, and YOLOv5s, are applied to the dataset of measurements collected in the presence of sea lamprey attachment, and the comparison of their performance shows that YOLOv5s model achieves the highest mean average precision (mAP) and the fastest inference speed. Furthermore, to improve the accuracy of the prediction model and reduce the false positive (FP) rate due to the sensor’s memory effect, a filter branch with different detection thresholds for the compression and suction patterns, respectively, is added to the original machine-learning algorithm. The trained model is validated and used to automatically detect sea lamprey attachments and locate the suction area on the sensor in real time.},
+  preview={SensorJournal_Shi.gif},
+  doi = {10.1109/JSEN.2023.3249625},
+  slides = {Slides_SensorJournal.pdf},
+  video = {https://www.youtube.com/watch?v=N5NrJuSQsJA},
+  selected  = {true}
+}
+
+@article{wang2024mechanical,
+  title={Mechanical Design and Data-Enabled Predictive Control of a Planar Soft Robot},
+  author={Wang, Huanqing and Zhang, Kaixiang and Lee, Kyungjoon and Mei, Yu and Zhu, Keyi and Srivastava, Vaibhav and Sheng, Jun and Li, Zhaojian},
+  journal={IEEE Robotics and Automation Letters},
   year={2024},
   publisher={IEEE},
   abbr = {Journal},
 
-  abstract={Soft robots, with their remarkable advantages in various applications, face the critical challenge of embodied perception, encompassing proprioceptive sensing and perceiving unknown environments (exteroception). In this article, we achieve simultaneous continuous shape reconstruction and external force estimation for soft bending actuators using only a proprioceptive curvature sensor. We introduce a novel distributed inductive curvature sensor designed for capturing continuous shape through electromagnetic induction. In addition, we enhance an analytical static model based on the Euler–Bernoulli curved beam theory to predict the shape under pneumatic actuation and external forces. Furthermore, a model-based optimization algorithm is proposed to estimate external forces based on the measured shape. Extensive experimental validation supports the efficacy of the proposed sensor and algorithms.},
-  preview={TMech1.jpg},
-  doi = {10.1109/TMECH.2024.3397825},
-  poster = {Poster_TMech1.pdf},
-  slides = {Slides_TMech1.pdf},
-  video = {https://www.youtube.com/watch?v=0Kpc-y5kq6U},
-  award = {Best Student Paper at AIM2024},
-  selected  = {true}
+  abstract={Soft robots offer a unique combination of flexibility, adaptability, and safety, making them well-suited for a diverse range of applications. However, the inherent complexity of soft robots poses great challenges in their modeling and control. In this letter, we present the mechanical design and data-driven control of a pneumatic-driven soft planar robot. Specifically, we employ a data-enabled predictive control (DeePC) strategy that directly utilizes system input/output data to achieve safe and optimal control, eliminating the need for tedious system identification or modeling. In addition, a dimension reduction technique is introduced into the DeePC framework, resulting in significantly enhanced computational efficiency with minimal to no degradation in control performance. Comparative experiments are conducted to validate the efficacy of DeePC in the control of the fabricated soft robot.},
+  preview={RAL_Wang.jpg},
+  doi = {10.1109/LRA.2024.3434929},
+  video = {https://www.youtube.com/watch?v=yTN6vKkndDg},
+  selected  = {false}
 }
+
+@article{shin2025error,
+  title={Error compensation in a redundant system during 'failure' of individual motor elements},
+  author={Shin, Narae and Mei, Yu and Tan, Xiaobo and Srivastava, Vaibhav and Ranganathan, Rajiv},
+  journal={Experimental Brain Research},
+  volume={243},
+  number={2},
+  pages={46},
+  year={2025},
+  publisher={Springer},
+  abbr = {Journal},
+
+  abstract={A characteristic feature of redundancy in the motor system is the ability to compensate for the failure of individual motor elements without affecting task performance. In this study, we examined the pattern and variability in error compensation between motor elements during a virtual task. Participants performed a redundant cursor control task with finger movements. In some conditions, we induced ‘failure’ by using a haptic glove to apply forces to constrain the motion of one of four fingers (index, middle, ring, or little). Our results showed that (i) other fingers increased their range of motion to compensate for the failure of a specific finger, with most of this compensation coming from non-adjacent fingers, and (ii) there was greater trial-to-trial variation in how the task was achieved as indexed by the higher null space variability when the middle and ring fingers were constrained. These results highlight the key role of the interdependence between motor elements in determining error compensation patterns and the variability in coordination patterns.},
+  preview={EBR_Narae.jpg},
+  doi = {10.1007/s00221-024-06987-5},
+  selected  = {false}
+}
+
 
 @article{fairchild2023physics,
   title={Physics-informed Online Estimation of Stiffness and Shape of Soft Robotic Manipulators},
@@ -153,39 +211,4 @@
   slides = {Slides_LDSC.pdf},
   poster = {Poster_LDSC.pdf},
   selected  = {false}
-}
-
-@article{shi2023automated,
-  title={Automated Soft Pressure Sensor Array-Based Sea Lamprey Detection Using Machine Learning},
-  author={Shi, Hongyang and Mei, Yu and Gonz{\'a}lez-Afanador, Ian and Chen, Claudia and Miehls, Scott and Holbrook, Christopher and Sepulveda, Nelson and Tan, Xiaobo},
-  journal={IEEE Sensors Journal},
-  volume={23},
-  number={7},
-  pages={7546--7557},
-  year={2023},
-  publisher={IEEE},
-  abbr = {Journal},
-
-  abstract={Sea lamprey, a destructive invasive species in the Great Lakes in North America, is among very few fishes that rely on oral suction during migration and spawning. Recently, soft pressure sensors have been proposed to detect the attachment of sea lamprey as part of the monitoring and control effort. However, human decision is still required for the recognition of patterns in the measured signals. In this article, a novel automated soft pressure sensor array-based sea lamprey detection framework is proposed using object detection convolutional neural networks. First, the resistance measurements of the pressure sensor array are converted to mappings of relative change in resistance. These mappings typically show two different types of patterns under lamprey attachment: a high-pressure circular pattern corresponding to the mouth rim compressed against the sensor (“compression” pattern), and a low-pressure blob corresponding to the partial vacuum region of the sucking mouth (“suction” pattern). Three types of object detection algorithms, single-shot detector (SSD), RetinaNet, and YOLOv5s, are applied to the dataset of measurements collected in the presence of sea lamprey attachment, and the comparison of their performance shows that YOLOv5s model achieves the highest mean average precision (mAP) and the fastest inference speed. Furthermore, to improve the accuracy of the prediction model and reduce the false positive (FP) rate due to the sensor’s memory effect, a filter branch with different detection thresholds for the compression and suction patterns, respectively, is added to the original machine-learning algorithm. The trained model is validated and used to automatically detect sea lamprey attachments and locate the suction area on the sensor in real time.},
-  preview={SensorJournal_Shi.gif},
-  doi = {10.1109/JSEN.2023.3249625},
-  slides = {Slides_SensorJournal.pdf},
-  video = {https://www.youtube.com/watch?v=N5NrJuSQsJA},
-  selected  = {true}
-}
-
-@inproceedings{mei2023simultaneous,
-  title={Simultaneous Motion and Stiffness Control for Soft Pneumatic Manipulators Based on a Lagrangian-Based Dynamic Model},
-  author={Mei, Yu and Fairchild, Preston and Srivastava, Vaibhav and Cao, Changyong and Tan, Xiaobo},
-  booktitle={ACC},
-  year={2023},
-  abbr = {Conference},
-
-  abstract={A soft continuum manipulator with tunable stiffness can not only take advantage of high compliance for safe adaptation in unknown environments, but also circumvent the drawbacks of instability and low loading capability. The high nonlinearity of soft manipulators and the strong coupling between actuation and stiffness-tuning make their simultaneous control challenging. In this work, a novel approach to simultaneous control of actuation and stiffness-tuning is proposed for soft pneumatic manipulators. With a piecewise-constant curvature assumption, a Lagrangian-based dynamic model with realistic approximation is used for control design, where the dynamics of the stiffness-tunable mechanism is incorporated. An extended Kalman filter (EKF) is proposed to estimate unmeasurable states including the stiffness and the velocity. A nonlinear model predictive control (NMPC) framework is developed first in the configuration space, and then extended to the task space, for simultaneous motion and stiffness control under inflation and vacuum pressure constraints. Simulation results are presented to support the efficacy of the proposed approach.},
-  preview={ACC2023.gif},
-  doi = {10.23919/ACC55779.2023.10156049},
-  poster = {Poster_ACC2023.pdf},
-  slides = {Slides_ACC2023.pdf},
-  video = {https://www.youtube.com/watch?v=4u4hd4IwhuY},
-  selected  = {true}
 }

@@ -41,6 +41,19 @@ nav_order: 4
   <tr>
     <td>
       <span class="svc-item">
+        <a href="https://www.ieee-ras.org/publications/t-ase/"
+            target="_blank"
+            rel="noopener">
+          IEEE Transactions on Automation Science and Engineering (TASE)
+        </a>
+      </span>
+    </td>
+    <td class="services-year">2026</td>
+  </tr>
+
+  <tr>
+    <td>
+      <span class="svc-item">
         <a href="https://www.sciencedirect.com/journal/robotics-and-autonomous-systems"
            target="_blank"
            rel="noopener">
@@ -100,7 +113,7 @@ nav_order: 4
         </a>
       </span>
     </td>
-    <td class="services-year">2025</td>
+    <td class="services-year">2025, 2026</td>
   </tr>
 
   <tr>

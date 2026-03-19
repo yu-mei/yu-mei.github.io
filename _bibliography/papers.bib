@@ -35,11 +35,7 @@
 
   abstract={Positive-negative pressure regulation is critical to soft robotic actuators, enabling large motion ranges and versatile actuation modes. However, achieving high-performance regulation across both pressure polarities remains challenging due to asymmetric inflation–deflation dynamics, valve nonlinearities, and switching-induced flow disturbances. This paper presents BiPneu, a compact and cost-efficient multi-channel bipolar-pressure pneumatic system for soft robots that enables wide-range, accurate, and responsive pressure regulation while providing seamless compatibility with high-level software ecosystems. A dual-mode sliding-mode controller (DM-SMC) with hysteresis-supervised mode selection is proposed based on a hybrid electro-pneumatic model. Extensive simulation and experiments demonstrate the superior performance of DM-SMC in tracking step and sinusoidal pressure references compared with both advanced model predictive controllers and well-tuned PID controllers. Experimental results show average absolute errors of 1.44 kPa in multi-step tests and 4.23 kPa in sinusoidal tracking, corresponding to reductions of 11.9\% and 35.6\% relative to PID control, along with improved control effort, valve switching rate, and transient response. Robustness of DM-SMC is further verified on a bellow actuator with pressure-dependent volume. Finally, BiPneu’s capability is demonstrated via two soft robotic examples, quick ball-maneuvering with a soft parallel manipulator and real-time finite element method (FEM)-based teleoperation of a soft bellows actuator.},
   preview={TMech2.gif},
-  doi = {},
-  poster = {},
-  slides = {},
   video = {https://youtu.be/ujWjucfVKs0},
-  award = {},
   selected  = {true}
 }
 
@@ -88,6 +84,19 @@
   slides = {Slides_ACC2023.pdf},
   video = {https://www.youtube.com/watch?v=4u4hd4IwhuY},
   selected  = {true}
+}
+
+@article{mei2025modeling,
+  title={Modeling and Mixed-Integer Nonlinear MPC of Positive-Negative Pressure Pneumatic Systems},
+  author={Mei, Yu and Zhou, Xinyu and Tan, Xiaobo},
+  booktitle={Preprint},
+  year={2025},
+  abbr={Conference},
+
+  abstract={Positive-negative pressure regulation is critical to soft robotic actuators, enabling large motion ranges and versatile actuation modes. However, it remains challenging due to complex nonlinearities, oscillations, and direction-dependent, piecewise dynamics introduced by affordable pneumatic valves and the bidirectional architecture. We present a model-based control framework that couples a physics-grounded switched nonlinear plant model (inflation/deflation modes) with a mixed-integer nonlinear model predictive controller (MI-NMPC). The controller co-optimizes mode scheduling and PWM inputs to realize accurate reference tracking while enforcing input constraints and penalizing energy consumption and excessive switching. To make discrete mode decisions tractable, we employ a Combinatorial Integral Approximation that relaxes binary mode variables to continuous surrogates within the valve-scheduling layer. With parameters identified from the physical system, simulations with step and sinusoidal references validate the proposed MI-NMPC, showing a consistently favorable trade-off among accuracy, control effort, and switching, and outperforming conventional PID and NMPC with heuristic mode selection.},
+  preview={ACC2026.jpg},
+  arxiv={2510.00433},
+  selected={true}
 }
 
 @article{qi2024design,

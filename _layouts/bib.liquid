@@ -184,10 +184,13 @@
 
     <div class="periodical">
       {{ periodical | strip }}
-      {% if entry.award %}
-        - <span class="award-text">{{ entry.award }} :trophy:</span>
-      {% endif %}
     </div>
+
+    {% if entry.award %}
+      <div class="award-line">
+        {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+      </div>
+    {% endif %}
 
     <div class="periodical">
       {{ entry.note | strip }}

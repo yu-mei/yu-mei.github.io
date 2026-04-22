@@ -188,7 +188,7 @@
 
     {% if entry.award %}
       <div class="award-line">
-        {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+        :trophy: {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' | strip }}
       </div>
     {% endif %}
 

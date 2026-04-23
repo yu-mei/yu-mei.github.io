@@ -104,6 +104,18 @@
         }
       }
 
+      .periodical {
+        a.periodical-link {
+          color: inherit;
+          text-decoration: underline;
+          text-underline-offset: 0.1em;
+
+          &:hover {
+            color: var(--global-theme-color);
+          }
+        }
+      }
+
       .links {
         a.btn {
           color: var(--global-text-color);

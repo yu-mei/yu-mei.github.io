@@ -79,9 +79,11 @@
 
       .author {
         a {
+          color: inherit;
           border-bottom: 1px dashed var(--global-theme-color);
 
           &:hover {
+            color: inherit;
             border-bottom-style: solid;
             text-decoration: none;
           }
@@ -107,11 +109,12 @@
       .periodical {
         a.periodical-link {
           color: inherit;
+          font-weight: normal;
           text-decoration: underline;
           text-underline-offset: 0.1em;
 
           &:hover {
-            color: var(--global-theme-color);
+            color: inherit;
           }
         }
       }

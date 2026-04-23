@@ -155,7 +155,9 @@
               element.attr('title', '');
               var moreAuthorsShow = element.attr('data-more-authors-show');
               var moreAuthorsHide = element.attr('data-more-authors-hide');
-              var more_authors_text = element.text() == moreAuthorsHide ? moreAuthorsShow : moreAuthorsHide;
+              var isExpanded = element.hasClass('expanded');
+              var more_authors_text = isExpanded ? moreAuthorsHide : moreAuthorsShow;
+              element.toggleClass('expanded', !isExpanded);
               var cursorPosition = 0;
               var textAdder = setInterval(function(){
                 element.html(more_authors_text.substring(0, cursorPosition + 1));

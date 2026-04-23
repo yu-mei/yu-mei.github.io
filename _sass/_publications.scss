@@ -82,12 +82,12 @@
       .author {
         a {
           color: var(--global-text-color) !important;
-          font-weight: 400 !important;
+          font-weight: 100 !important;
           border-bottom: 1px dashed var(--global-theme-color);
 
           &:hover {
             color: var(--global-text-color) !important;
-            font-weight: 400 !important;
+            font-weight: 100 !important;
             border-bottom-style: solid;
             text-decoration: none;
           }

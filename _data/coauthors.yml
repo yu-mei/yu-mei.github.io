@@ -1,38 +1,3 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
-
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
-
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
-
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
-
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
-
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
-
 "tan":
   - firstname: ["Xiaobo", "X."]
     url: https://www.egr.msu.edu/~xbtan/
@@ -44,3 +9,21 @@
 "li":
   - firstname: ["Zhaojian", "Z."]
     url: https://www.egr.msu.edu/rival/
+
+"sheng":
+  - firstname: ["Jun", "J."]
+    url: https://rams.engr.ucr.edu/jun-sheng-profile/
+
+"Sepulveda":
+  - firstname: ["Nelson", "N."]
+    url: https://www.egr.msu.edu/~nelsons/
+
+"Sepulveda":
+  - firstname: ["Nelson", "N."]
+    url: https://www.egr.msu.edu/~nelsons/
+
+"Changyong":
+  - firstname: ["Cao", "C."]
+    url: https://www.caogroup.org/
+
+

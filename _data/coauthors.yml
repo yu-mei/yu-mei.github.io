@@ -14,20 +14,16 @@
   - firstname: ["Jun", "J."]
     url: https://rams.engr.ucr.edu/jun-sheng-profile/
 
-"Sepulveda":
+"sepulveda":
   - firstname: ["Nelson", "N."]
     url: https://www.egr.msu.edu/~nelsons/
 
-"Sepulveda":
-  - firstname: ["Nelson", "N."]
-    url: https://www.egr.msu.edu/~nelsons/
-
-"Changyong":
-  - firstname: ["Cao", "C."]
+"cao":
+  - firstname: ["Changyong", "C."]
     url: https://www.caogroup.org/
 
-"Yiming":
-  - firstname: ["Deng", "D."]
+"deng":
+  - firstname: ["Yiming", "Y."]
     url: https://www.egr.msu.edu/deng/
     
 

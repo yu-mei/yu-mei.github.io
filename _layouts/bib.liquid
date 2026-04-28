@@ -185,8 +185,11 @@
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
+    {% assign impact_factor = entry.IF | default: entry.if %}
     {% if entry.type == 'article' %}
-      {% capture venue_text %}<em>{{ entry.journal }}</em>{% endcapture %}
+      {% capture venue_text -%}
+        <em>{{ entry.journal }}</em>{% if impact_factor %} (IF={{ impact_factor }}){% endif %}
+      {%- endcapture %}
     {% elsif proceedings contains entry.type %}
       {% capture venue_text %}<em>{{ entry.booktitle }}</em>{% endcapture %}
     {% elsif thesis contains entry.type %}

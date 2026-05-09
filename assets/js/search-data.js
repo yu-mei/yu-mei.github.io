@@ -432,7 +432,7 @@ ninja.data = [{
           section: "News",},{id: "news-medal-military-i-am-honored-to-be-selected-as-asme-dynamic-systems-and-control-division-dscd-rising-star-and-give-an-invited-talk-at-mecc-2025",
           title: ':medal_military: I am honored to be selected as ASME Dynamic Systems and Control...',
           description: "",
-          section: "News",},{id: "news-trophy-our-paper-on-simultaneous-shape-reconstruction-and-force-estimation-of-soft-bending-actuators-received-the-2025-asme-dscd-best-joint-journal-conference-paper-award-on-mechatronics-the-paper-was-presented-at-aim-2024-and-jointly-published-in-ieee-asme-transactions-on-mechatronics",
+          section: "News",},{id: "news-trophy-our-paper-on-simultaneous-shape-reconstruction-and-force-estimation-of-soft-bending-actuators-received-the-2025-asme-dscd-best-joint-journal-conference-paper-award-on-mechatronics",
           title: ':trophy: Our paper on simultaneous shape reconstruction and force estimation of soft bending...',
           description: "",
           section: "News",},{id: "projects-project-1",

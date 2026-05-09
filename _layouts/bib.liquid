@@ -232,6 +232,11 @@
         :trophy: {{ entry.award | markdownify | remove: '<p>' | remove: '</p>' | strip }}
       </div>
     {% endif %}
+    {% if entry.award2 %}
+      <div class="award-line">
+        :trophy: {{ entry.award2 | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+      </div>
+    {% endif %}
 
     <div class="periodical">
       {{ entry.note | strip }}
@@ -421,6 +426,12 @@
       <!-- Hidden Award block -->
       <div class="award hidden d-print-inline">
         <p>{{ entry.award | markdownify }}</p>
+      </div>
+    {% endif %}
+    {% if entry.award2 %}
+      <!-- Hidden Award block -->
+      <div class="award hidden d-print-inline">
+        <p>{{ entry.award2 | markdownify }}</p>
       </div>
     {% endif %}
 

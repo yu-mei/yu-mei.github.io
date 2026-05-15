@@ -436,7 +436,7 @@ ninja.data = [{
           title: ':trophy: Our paper on simultaneous shape reconstruction and force estimation of soft bending...',
           description: "",
           section: "News",},{id: "news-tada-one-paper-bipneu-on-bipolar-pressure-pneumatic-system-for-soft-robots-is-accepted-to-ieee-asme-tmech",
-          title: ':tada: One paper BiPneu on Bipolar-Pressure Pneumatic System for Soft Robots is accepted...',
+          title: ':tada: One paper BiPneu on bipolar-pressure pneumatic system for soft robots is accepted...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',

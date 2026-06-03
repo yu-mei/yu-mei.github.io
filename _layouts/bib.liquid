@@ -197,11 +197,7 @@
     {% else %}
       {% capture venue_text %}{% endcapture %}
     {% endif %}
-    {% if entry.doi and venue_text != blank %}
-      {% capture entrytype %}<a class="periodical-link" href="https://doi.org/{{ entry.doi }}">{{ venue_text }}</a>{% endcapture %}
-    {% else %}
-      {% capture entrytype %}{{ venue_text }}{% endcapture %}
-    {% endif %}
+    {% capture entrytype %}{{ venue_text }}{% endcapture %}
     {% assign entrymonth = '' %}
     {% if entry.month %}
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}

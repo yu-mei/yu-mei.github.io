@@ -1,0 +1,146 @@
+---
+layout: none
+title: SoftArm MJPC
+description: "Use MuJoCo rigid links to simulate a pneumatic soft arm, then build a real-time predictive controller on Google DeepMind's MuJoCo MPC framework. It continuously predicts the arm's future motion and optimizes the actuation inputs to reduce tracking error in real time, letting the soft arm smoothly follow a dynamically moving target."
+img: assets/img/publication_preview/MJPC_SoftArm.gif
+importance: 2
+selected: true
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SoftArm MJPC · Project Introduction</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#52606d; --faint:#7b8794;
+    --accent:#4f46e5; --accent2:#0d9488; --warn:#b45309;
+    --line:#e4e7eb; --bg:#f6f7f9; --card:#ffffff; --code:#f3f4f6;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:16px;
+  }
+  code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .back-to-projects{
+    position:fixed; top:14px; left:14px; z-index:1000;
+    background:rgba(255,255,255,.92); color:#1f2933;
+    border:1px solid #e4e7eb; border-radius:999px; padding:6px 14px;
+    font:600 .85rem -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,.12);
+  }
+  .back-to-projects:hover{text-decoration:none; background:#fff}
+
+  .hero{
+    background:linear-gradient(120deg,#4338ca 0%,#4f46e5 45%,#0d9488 100%);
+    color:#fff; padding:56px 24px 48px;
+  }
+  .hero-inner{max-width:880px; margin:0 auto}
+  .hero h1{margin:0 0 10px; font-size:2.05rem; line-height:1.2; letter-spacing:-.01em}
+  .hero p{margin:0; font-size:1.08rem; max-width:720px; color:#eef2ff}
+  .chips{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px}
+  .chip{
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    padding:5px 12px; border-radius:999px; font-size:.82rem;
+  }
+
+  .wrap{max-width:880px; margin:0 auto; padding:0 24px}
+  main{padding:34px 0 64px; min-width:0}
+
+  section{margin-bottom:44px; scroll-margin-top:18px}
+  section > h2{font-size:1.5rem; margin:0 0 6px; letter-spacing:-.01em; display:flex; align-items:center; gap:10px}
+  section > h2 .num{font-size:.8rem; font-weight:700; color:#fff; background:var(--accent); width:26px; height:26px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto}
+  .lead{color:var(--muted); margin:.2rem 0 1.2rem}
+  p{margin:.6rem 0}
+
+  /* responsive 16:9 video embed */
+  .video-embed{
+    position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden;
+    border-radius:var(--radius); border:1px solid var(--line); background:#000; margin:14px 0;
+  }
+  .video-embed iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
+
+  .links-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0}
+  .btn-link{
+    display:inline-block; padding:7px 16px; border-radius:8px;
+    border:1px solid var(--accent); color:var(--accent); font-weight:600; font-size:.9rem;
+  }
+  .btn-link:hover{background:var(--accent); color:#fff; text-decoration:none}
+
+  .skills{margin-top:20px; font-size:.95rem; color:var(--muted)}
+  .skills strong{color:var(--ink); letter-spacing:.04em}
+  .skills a{font-weight:600}
+
+  footer{border-top:1px solid var(--line); padding:24px 0 0; color:var(--muted); font-size:.9rem; margin-top:8px}
+</style>
+</head>
+<body>
+
+<a class="back-to-projects" href="/projects/">← Projects</a>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>SoftArm MJPC</h1>
+    <p>A MuJoCo simulation of a pneumatic soft arm built from rigid links, paired
+       with a real-time predictive controller on Google DeepMind's MuJoCo MPC —
+       so the soft arm smoothly follows a dynamically moving target.</p>
+    <div class="chips">
+      <span class="chip">MuJoCo</span>
+      <span class="chip">MJPC · DeepMind</span>
+      <span class="chip">Real-time MPC</span>
+      <span class="chip">Pneumatic soft arm</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+
+    <section id="demo">
+      <h2><span class="num">1</span>Demo</h2>
+      <p class="lead">Real-time predictive control tracking a moving target.</p>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/R1iKUpCJgIM"
+                title="SoftArm MJPC demo"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+      <div class="links-row">
+        <a class="btn-link" href="https://youtu.be/R1iKUpCJgIM">▶ Watch on YouTube</a>
+        <a class="btn-link" href="https://github.com/google-deepmind/mujoco_mpc">MuJoCo MPC (DeepMind)</a>
+      </div>
+    </section>
+
+    <section id="overview">
+      <h2><span class="num">2</span>Overview</h2>
+      <p>This project uses MuJoCo rigid links to simulate a pneumatic soft arm, and
+      then develops a real-time predictive controller based on the
+      <a href="https://github.com/google-deepmind/mujoco_mpc">MuJoCo MPC framework</a>
+      from Google DeepMind.</p>
+      <p>The controller continuously predicts the arm's future motion and optimizes the
+      actuation inputs to reduce the tracking error in real time, allowing the soft arm
+      to smoothly follow a dynamically moving target.</p>
+      <p class="skills"><strong>TECHNICAL SKILLS:</strong> <a href="https://mujoco.org/">MuJoCo</a></p>
+    </section>
+
+    <footer>
+      Built with MuJoCo and
+      <a href="https://github.com/google-deepmind/mujoco_mpc">google-deepmind/mujoco_mpc</a>.
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
+{% endraw %}

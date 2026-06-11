@@ -113,6 +113,34 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
+    <!-- Selected projects -->
+    {% if page.selected_projects %}
+      <style>
+        .selected-link {
+          text-decoration: none;
+          color: inherit;
+          font-size: 2.0em;
+          margin-right: 10px;
+        }
+        .selected-link:hover {
+          text-decoration: underline;
+        }
+        .selected-divider {
+          flex-grow: 1;
+          height: 1px;
+          background-color: #ccc; /* or var(--global-divider-color) */
+        }
+      </style>
+
+      <!-- Fancy Divider with Clickable Selected Projects -->
+      <div style="display: flex; align-items: center; margin: 30px 0 10px;">
+        <a href="{{ '/projects/' | relative_url }}" class="selected-link">Selected Projects</a>
+        <div class="selected-divider"></div>
+      </div>
+
+      {% include selected_projects.liquid %}
+    {% endif %}
+
 
     <!-- Social -->
     {% if page.social %}

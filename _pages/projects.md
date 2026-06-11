@@ -2,7 +2,7 @@
 layout: page
 permalink: /projects/
 title: Projects
-description: Research and engineering projects — click any card to open its full write-up.
+description: Research and engineering projects — click any title to open its full write-up.
 nav: true
 nav_order: 4
 _styles: >
@@ -19,22 +19,18 @@ _styles: >
   }
   .projects-preface p { margin-bottom: 0; }
   .projects-preface p + p { margin-top: 0.8rem; }
-  .projects .card-title { font-size: 1.15rem; }
-  .projects .card-text { color: var(--global-text-color-light); }
 ---
 
 <div class="projects-preface">
   <p>A collection of my research and engineering projects across soft robotics,
   sensing, and learning-based modeling and control.</p>
-  <p>Each card links to a dedicated page with the full technical write-up —
+  <p>Each entry links to a dedicated page with the full technical write-up —
   motivation, methods, results, and code.</p>
 </div>
 
 <div class="projects">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-    {% assign sorted_projects = site.projects | sort: 'importance' %}
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+  {% assign sorted_projects = site.projects | sort: 'importance' %}
+  {% for project in sorted_projects %}
+    {% include projects.liquid %}
+  {% endfor %}
 </div>

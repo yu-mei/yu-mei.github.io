@@ -445,11 +445,16 @@ ninja.data = [{
           section: "News",},{id: "news-tada-one-paper-bipneu-on-bipolar-pressure-pneumatic-system-for-soft-robots-is-accepted-to-ieee-asme-tmech",
           title: ':tada: One paper BiPneu on bipolar-pressure pneumatic system for soft robots is accepted...',
           description: "",
-          section: "News",},{id: "projects-todo-project-two-title",
-          title: 'TODO: Project Two Title',
-          description: "TODO: one or two sentences describing this project — this text shows on the card.",
+          section: "News",},{id: "projects-soft-robotic-arm-using-isaac-sim",
+          title: 'Soft Robotic Arm Using Isaac Sim',
+          description: "A soft robotic arm controlled with Gaussian Process-based Model Predictive Control. The GP model captures the nonlinear soft-arm dynamics while MPC optimizes the control inputs to track the desired motion in real time — showing how Isaac Sim FEM can be combined with learning-based predictive control for soft robotic arm modeling, simulation, and control.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/placeholder-1/";
+              window.location.href = "/projects/SoftArm_IsaacSim/";
+            },},{id: "projects-softarm-mjpc",
+          title: 'SoftArm MJPC',
+          description: "Use MuJoCo rigid links to simulate a pneumatic soft arm, then build a real-time predictive controller on Google DeepMind&#39;s MuJoCo MPC framework. It continuously predicts the arm&#39;s future motion and optimizes the actuation inputs to reduce tracking error in real time, letting the soft arm smoothly follow a dynamically moving target.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/SoftArm_MJPC/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",

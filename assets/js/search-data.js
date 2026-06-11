@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "A selection of my research and engineering projects.",
+          description: "Research and engineering projects — click any card to open its full write-up.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -445,7 +445,22 @@ ninja.data = [{
           section: "News",},{id: "news-tada-one-paper-bipneu-on-bipolar-pressure-pneumatic-system-for-soft-robots-is-accepted-to-ieee-asme-tmech",
           title: ':tada: One paper BiPneu on bipolar-pressure pneumatic system for soft robots is accepted...',
           description: "",
-          section: "News",},{id: "teachings-data-science-fundamentals",
+          section: "News",},{id: "projects-todo-project-two-title",
+          title: 'TODO: Project Two Title',
+          description: "TODO: one or two sentences describing this project — this text shows on the card.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/placeholder-1/";
+            },},{id: "projects-todo-project-three-title",
+          title: 'TODO: Project Three Title',
+          description: "TODO: one or two sentences describing this project — this text shows on the card.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/placeholder-2/";
+            },},{id: "projects-singularity-free-pcc-cartesian-state-acados-mpc",
+          title: 'Singularity-Free PCC — Cartesian-State acados MPC',
+          description: "A from-scratch piecewise-constant-curvature model and real-time Cartesian-space MPC for a bellow-like soft arm — singularity-free at the straight pose.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/singularity-free-pcc/";
+            },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
           section: "Teachings",handler: () => {

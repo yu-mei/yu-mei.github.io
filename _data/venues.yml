@@ -39,15 +39,3 @@
 
 "Conference":
   color: "#4fa06e"
-
-# =========================
-# Project Category Badges (used by _bibliography/projects.bib)
-# =========================
-"Soft Robotics":
-  color: "#6a5acd"
-
-"Sensing":
-  color: "#2f7f7f"
-
-"Control":
-  color: "#3f51b5"

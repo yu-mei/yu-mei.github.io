@@ -14,7 +14,7 @@ profile:
     <p>East Lansing, MI, 48823, USA</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-selected_projects: true # includes a list of projects marked as "selected={true}" in _bibliography/projects.bib
+selected_projects: true # includes selected project cards (projects in _projects/ with selected: true)
 social: true # includes social icons at the bottom of the page
 
 announcements:

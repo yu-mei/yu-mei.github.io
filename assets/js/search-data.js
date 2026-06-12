@@ -450,6 +450,11 @@ ninja.data = [{
           description: "Integrated A* global path planning with Timed Elastic Band local trajectory optimization, enabling efficient global route generation while reducing the computational burden of local navigation.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5G_MobileRobot/";
+            },},{id: "projects-driverless-container-truck",
+          title: 'Driverless Container Truck',
+          description: "Developed embedded perception algorithms for a driverless container truck, using machine learning to detect trucks and lane markings on the road in real time.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/DrivelessTruck/";
             },},{id: "projects-micromouse-robot-competition",
           title: 'Micromouse Robot Competition',
           description: "A Micromouse robot project where maze-solving algorithms were first validated in Webots simulation and then deployed on a physical robot, integrating wall sensing, motion control, path planning, and real-world autonomous maze navigation.",

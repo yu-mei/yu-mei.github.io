@@ -447,14 +447,19 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-soft-robotic-arm-using-isaac-sim",
           title: 'Soft Robotic Arm Using Isaac Sim',
-          description: "Learning-based control couples a Gaussian-process dynamics model with model-predictive control to track the motions of an Isaac Sim FEM soft arm in real time.",
+          description: "A course project exploring Gaussian Process-based MPC for controlling an Isaac Sim soft-arm model in real time, usinng the FEM simulation capabilities of Isaac Sim.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SoftArm_IsaacSim/";
             },},{id: "projects-mujoco-based-mpc-for-soft-robotic-arms",
           title: 'MuJoCo-based MPC for Soft Robotic Arms',
-          description: "A rigid-link MuJoCo surrogate enables real-time, sampling-based model-predictive control of a pneumatic soft arm, driving accurate tracking of dynamically moving targets.",
+          description: "A MuJoCo-based soft-arm simulation demo exploring sampling-based model-predictive control for tracking dynamically moving targets.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SoftArm_MJPC/";
+            },},{id: "projects-supermarket-shelf-stocking-robot",
+          title: 'Supermarket Shelf-Stocking Robot',
+          description: "A course project simulating an autonomous supermarket shelf-stocking robot in Webots, integrating product search, vision-based grasping, shelf-cell selection, GPS-based navigation, and pick-and-place manipulation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Webots/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",

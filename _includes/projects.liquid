@@ -21,6 +21,7 @@
   <div class="{% if project.img %}col-sm-9{% else %}col-sm-12{% endif %} project-info">
     <a class="project-title" href="{{ project_link }}">{{ project.title }}</a>
     {% if project.meta %}<div class="project-meta">{{ project.meta }}</div>{% endif %}
+    <p class="project-desc">{{ project.description }}</p>
     {% if project.pdf or project.code or project.video or project.website %}
       <div class="links">
         {% if project.pdf %}<a href="{{ project.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>{% endif %}
@@ -29,6 +30,5 @@
         {% if project.website %}<a href="{{ project.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>{% endif %}
       </div>
     {% endif %}
-    <p class="project-desc">{{ project.description }}</p>
   </div>
 </div>

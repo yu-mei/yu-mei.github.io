@@ -172,7 +172,7 @@ ul.task-list input[type="checkbox"] {
 
   // link buttons under a project (Video / Code / Website …), same size as publication buttons
   .links {
-    margin: 0.5rem 0 0.7rem;
+    margin: 0.7rem 0 0;
 
     a.btn {
       color: var(--global-text-color);
@@ -216,6 +216,12 @@ ul.task-list input[type="checkbox"] {
   .projects .project-item:hover {
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
     transform: scale(1.02);
+  }
+
+  // the collapsed abstract/award boxes carry a background-colored dashed border that
+  // shows as a faint line on the grey card — hide it while collapsed
+  .publications ol.bibliography > li .hidden:not(.open) {
+    border: 0;
   }
 
   // rounder link buttons (Paper / Project / Code) + clearer color-change hover

@@ -445,7 +445,12 @@ ninja.data = [{
           section: "News",},{id: "news-tada-one-paper-bipneu-on-bipolar-pressure-pneumatic-system-for-soft-robots-is-accepted-to-ieee-asme-tmech",
           title: ':tada: One paper BiPneu on bipolar-pressure pneumatic system for soft robots is accepted...',
           description: "",
-          section: "News",},{id: "projects-micromouse-robot-competition",
+          section: "News",},{id: "projects-5g-intelligent-mobile-robot",
+          title: '5G Intelligent Mobile Robot',
+          description: "Integrated A* global path planning with Timed Elastic Band local trajectory optimization, enabling efficient global route generation while reducing the computational burden of local navigation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5G_MobileRobot/";
+            },},{id: "projects-micromouse-robot-competition",
           title: 'Micromouse Robot Competition',
           description: "A Micromouse robot project where maze-solving algorithms were first validated in Webots simulation and then deployed on a physical robot, integrating wall sensing, motion control, path planning, and real-world autonomous maze navigation.",
           section: "Projects",handler: () => {

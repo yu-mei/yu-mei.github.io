@@ -143,7 +143,7 @@ ul.task-list input[type="checkbox"] {
   }
 
   .project-thumb {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0;
 
     img {
       width: 100%;
@@ -182,7 +182,7 @@ ul.task-list input[type="checkbox"] {
 
   // link buttons under a project (Video / Code / Website …), same size as publication buttons
   .links {
-    margin: 0.7rem 0 0;
+    margin: 0.3rem 0 0;
 
     a.btn {
       color: var(--global-text-color);
@@ -213,7 +213,7 @@ ul.task-list input[type="checkbox"] {
   background-color: rgba(128, 128, 128, 0.08);
   border: 1px solid var(--global-divider-color);
   border-radius: 12px;
-  padding: 1.1rem 1.4rem;
+  padding: 1.1rem 1.4rem 0.65rem;
   margin-bottom: 1.25rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
   transition:
@@ -232,6 +232,12 @@ ul.task-list input[type="checkbox"] {
 // shows as a faint line on the grey card — hide it while collapsed
 .publications ol.bibliography > li .hidden:not(.open) {
   border: 0;
+}
+
+// keep the preview flush with the card (drop Bootstrap's 1rem figure bottom margin)
+.publications ol.bibliography > li figure,
+.projects .project-item figure {
+  margin-bottom: 0;
 }
 
 // rounder publication link buttons + clearer color-change hover (projects handled above)

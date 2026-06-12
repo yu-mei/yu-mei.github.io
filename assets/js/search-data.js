@@ -467,7 +467,7 @@ ninja.data = [{
               window.location.href = "/projects/NXP/";
             },},{id: "projects-upper-limb-rehabilitation-robots",
           title: 'Upper Limb Rehabilitation Robots',
-          description: "Akso — a desktop upper-limb rehabilitation training robot for stroke patients, integrating a 3D-printed single-DOF mechanism, an STM32/FreeRTOS embedded controller, quintic-polynomial trajectory planning with PID position control, and a CHAI3D virtual training scene.",
+          description: "Akso — a desktop upper-limb rehabilitation training robot for stroke patients.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Reha_robot/";
             },},{id: "projects-robocup-humanoid-robot",

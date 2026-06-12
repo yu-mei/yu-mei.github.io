@@ -445,7 +445,12 @@ ninja.data = [{
           section: "News",},{id: "news-tada-one-paper-bipneu-on-bipolar-pressure-pneumatic-system-for-soft-robots-is-accepted-to-ieee-asme-tmech",
           title: ':tada: One paper BiPneu on bipolar-pressure pneumatic system for soft robots is accepted...',
           description: "",
-          section: "News",},{id: "projects-soft-robotic-arm-using-isaac-sim",
+          section: "News",},{id: "projects-micromouse-robot-competition",
+          title: 'Micromouse Robot Competition',
+          description: "A Micromouse robot project where maze-solving algorithms were first validated in Webots simulation and then deployed on a physical robot, integrating wall sensing, motion control, path planning, and real-world autonomous maze navigation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/MicroMouse/";
+            },},{id: "projects-soft-robotic-arm-using-isaac-sim",
           title: 'Soft Robotic Arm Using Isaac Sim',
           description: "A course project exploring Gaussian Process-based MPC for controlling an Isaac Sim soft-arm model in real time, usinng the FEM simulation capabilities of Isaac Sim.",
           section: "Projects",handler: () => {

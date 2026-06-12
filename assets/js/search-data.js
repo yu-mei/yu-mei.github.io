@@ -447,12 +447,12 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-soft-robotic-arm-using-isaac-sim",
           title: 'Soft Robotic Arm Using Isaac Sim',
-          description: "A soft robotic arm controlled with Gaussian Process-based Model Predictive Control. The GP model captures the nonlinear soft-arm dynamics while MPC optimizes the control inputs to track the desired motion in real time — showing how Isaac Sim FEM can be combined with learning-based predictive control for soft robotic arm modeling, simulation, and control.",
+          description: "Learning-based control couples a Gaussian-process dynamics model with model-predictive control to track the motions of an Isaac Sim FEM soft arm in real time.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SoftArm_IsaacSim/";
-            },},{id: "projects-softarm-mjpc",
-          title: 'SoftArm MJPC',
-          description: "Use MuJoCo rigid links to simulate a pneumatic soft arm, then build a real-time predictive controller on Google DeepMind&#39;s MuJoCo MPC framework. It continuously predicts the arm&#39;s future motion and optimizes the actuation inputs to reduce tracking error in real time, letting the soft arm smoothly follow a dynamically moving target.",
+            },},{id: "projects-mujoco-based-mpc-for-soft-robotic-arms",
+          title: 'MuJoCo-based MPC for Soft Robotic Arms',
+          description: "A rigid-link MuJoCo surrogate enables real-time, sampling-based model-predictive control of a pneumatic soft arm, driving accurate tracking of dynamically moving targets.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SoftArm_MJPC/";
             },},{id: "teachings-data-science-fundamentals",

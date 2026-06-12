@@ -450,6 +450,11 @@ ninja.data = [{
           description: "A Micromouse robot project where maze-solving algorithms were first validated in Webots simulation and then deployed on a physical robot, integrating wall sensing, motion control, path planning, and real-world autonomous maze navigation.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/MicroMouse/";
+            },},{id: "projects-nxp-cup-autonomous-vehicle",
+          title: 'NXP Cup Autonomous Vehicle',
+          description: "An NXP Cup autonomous vehicle project focused on vision-based line tracking and embedded motion control.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/NXP/";
             },},{id: "projects-soft-robotic-arm-using-isaac-sim",
           title: 'Soft Robotic Arm Using Isaac Sim',
           description: "A course project exploring Gaussian Process-based MPC for controlling an Isaac Sim soft-arm model in real time, usinng the FEM simulation capabilities of Isaac Sim.",

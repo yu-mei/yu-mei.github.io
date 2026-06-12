@@ -23,7 +23,7 @@ announcements:
   limit:  # leave blank to include all the news in the `_news` folder
 ---
 
-I am a PhD student in the [Smart Microsystems Lab](https://smlab.msu.edu/) at [Michigan State University](https://msu.edu/), advised by [Dr. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/) starting from 2021. Prior to joining MSU, I received my Bachelor degree in Robotics Engineering from the Department of Automation at [Southeast University](https://www.seu.edu.cn/english/) in 2020, advised by [Dr. Aiguo Song](https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en).
+I am a PhD student in the [Smart Microsystems Lab](https://smlab.msu.edu/) at [Michigan State University](https://msu.edu/), advised by [Prof. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/) starting from 2021. Prior to joining MSU, I received my Bachelor degree in Robotics Engineering from the Department of Automation at [Southeast University](https://www.seu.edu.cn/english/) in 2020, advised by [Prof. Aiguo Song](https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en).
 
 My research focuses on soft robotics, control systems and mechatronics, with an emphasis on soft actuator and sensor system design, as well as data-driven and learning-based modeling and control of robotic systems. 
 

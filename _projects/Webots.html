@@ -96,6 +96,19 @@ selected: true
   }
   .video-embed iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0}
 
+  /* single full-width figure */
+  .image{
+    width:100%; border:1px solid var(--line); border-radius:var(--radius);
+    margin:16px 0 6px; background:#fff;
+  }
+  .caption{color:var(--faint); font-size:.84rem; text-align:center; margin:0 0 4px}
+
+  /* two figures side by side */
+  .img-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:16px 0}
+  .img-row figure{margin:0}
+  .img-row img{width:100%; border:1px solid var(--line); border-radius:var(--radius); background:#fff; display:block}
+  .img-row figcaption{color:var(--faint); font-size:.84rem; text-align:center; margin:6px 0 0}
+
   .links-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0}
   .btn-link{
     display:inline-block; padding:7px 16px; border-radius:8px;
@@ -118,6 +131,7 @@ selected: true
     .wrap{padding:0 18px}
     .grid{grid-template-columns:1fr}
     .flow{grid-template-columns:1fr}
+    .img-row{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -223,6 +237,17 @@ selected: true
           </p>
         </div>
       </div>
+
+      <div class="img-row">
+        <figure>
+          <img src="/assets/img/projects/Pioneer3DX.png" alt="Pioneer 3-DX mobile base">
+          <figcaption>Pioneer 3-DX differential-drive mobile base.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/projects/khepera3_gripper.png" alt="Khepera III robot with gripper">
+          <figcaption>Khepera III with a gripper for grasping and placement.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="environment">
@@ -231,20 +256,12 @@ selected: true
         The supermarket scene was built in Webots with a central goods area and
         surrounding shelf regions.
       </p>
-      <p>
-        The environment contains a central product area where items are initially
-        placed, as well as multiple surrounding shelves. Each shelf contains two
-        vertical levels and multiple cells, allowing the robot to perform both
-        low-shelf and high-shelf stocking tasks. The robot first patrols around the
-        central goods area and uses a side-facing camera to search for products.
-        Once an object is detected near the center of the camera view, the robot
-        turns toward it and switches to the grasping stage.
-      </p>
-      <p>
-        The shelf system was represented as a set of candidate storage cells. After
-        grasping an item, the robot selected a target cell based on the current
-        shelf occupancy information, then navigated to the selected shelf and
-        executed a placement motion.
+
+      <img src="/assets/img/projects/Webots.png"
+           alt="Webots supermarket simulation environment with central goods area and surrounding shelves"
+           class="image">
+      <p class="caption">
+        The supermarket scene in Webots: a central goods area surrounded by shelf regions.
       </p>
     </section>
 
@@ -277,69 +294,14 @@ selected: true
           Stock the item on a lower or upper shelf
         </div>
       </div>
-
-      <p>
-        During the search stage, the robot moves counterclockwise around the
-        central goods area. When the side camera recognizes a product and the
-        detected object is centered in the visual field, the robot turns
-        approximately 90 degrees toward the object. It then uses front-facing
-        perception and distance information to approach the object, stop at an
-        appropriate grasping distance, and close the gripper.
-      </p>
-      <p>
-        After grasping, the robot selects a shelf cell from the available storage
-        locations. The navigation behavior considers whether the target shelf is
-        behind, to the side of, or across from the robot, then drives through the
-        corresponding aisle path before executing the placement motion.
-      </p>
     </section>
 
-    <section id="planning">
-      <h2><span class="num">6</span>Shelf Selection and Navigation</h2>
-      <p class="lead">
-        A simple shelf-memory structure was used to choose where each object should
-        be placed.
-      </p>
-      <p>
-        The simulated supermarket contains four shelf regions, each with two
-        vertical levels and four cells per level, resulting in 32 possible storage
-        cells. A shelf occupancy array was used to record whether each cell was
-        empty or already assigned to a product category. This allowed the robot to
-        place new items into empty cells or group similar products into existing
-        shelf regions.
-      </p>
-      <p>
-        Navigation was simplified using GPS coordinates and known shelf positions.
-        Based on the target cell location, the robot selected one of several
-        navigation routines: moving to a shelf on the opposite side, moving to a
-        side shelf, or moving to a shelf behind the robot. This structure made the
-        task logic easier to organize and helped connect high-level shelf planning
-        with low-level motion execution.
-      </p>
-    </section>
-
-    <section id="results">
-      <h2><span class="num">7</span>Results</h2>
-      <p class="lead">
-        The final simulation demonstrated an end-to-end autonomous stocking
-        behavior in the Webots environment.
-      </p>
-      <p>
-        The robot was able to search for products, detect and grasp target objects,
-        navigate to selected shelf locations, and complete placement on both lower
-        and upper shelf levels. The project provided hands-on experience with
-        robotic simulation, sensor processing, differential-drive control,
-        camera-based object recognition, task-level decision making, and
-        pick-and-place manipulation.
-      </p>
-
-      <p class="skills">
-        <strong>TECHNICAL SKILLS:</strong>
-        <a href="https://cyberbotics.com/">Webots</a> simulation · Mobile manipulation ·
-        Camera recognition · GPS/compass localization · Task planning ·
-        Autonomous navigation · Pick-and-place control
-      </p>
-    </section>
+    <p class="skills">
+      <strong>TECHNICAL SKILLS:</strong>
+      <a href="https://cyberbotics.com/">Webots</a> simulation · Mobile manipulation ·
+      Camera recognition · GPS/compass localization · Task planning ·
+      Autonomous navigation · Pick-and-place control
+    </p>
 
     <footer>
       Course Project, Robotic Software Engineering, 2019. Simulated using

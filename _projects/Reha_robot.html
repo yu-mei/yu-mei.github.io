@@ -1,0 +1,485 @@
+---
+layout: none
+title: Upper Limb Rehabilitation Robots
+description: "Akso — a desktop upper-limb rehabilitation training robot for stroke patients, integrating a 3D-printed single-DOF mechanism, an STM32/FreeRTOS embedded controller, quintic-polynomial trajectory planning with PID position control, and a CHAI3D virtual training scene."
+img: assets/img/projects/Reha_robot.gif
+meta: 'Bachelor Thesis (Graduation Design), Robot Engineering, 2020 (Instructor: <a href="https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en">Prof. Aiguo Song</a>)'
+year: 2020
+selected: true
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upper Limb Rehabilitation Robots · Project Introduction</title>
+<style>
+  :root{
+    --ink:#1f2933; --muted:#52606d; --faint:#7b8794;
+    --accent:#0f766e; --accent2:#2563eb; --warm:#b45309;
+    --line:#e4e7eb; --bg:#f6f7f9; --card:#ffffff; --code:#f3f4f6;
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--ink); background:var(--bg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; font-size:16px;
+  }
+  code,pre,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+  a{color:var(--accent2); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .back-to-projects{
+    position:fixed; top:14px; left:14px; z-index:1000;
+    background:rgba(255,255,255,.92); color:#1f2933;
+    border:1px solid #e4e7eb; border-radius:999px; padding:6px 14px;
+    font:600 .85rem -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    text-decoration:none; box-shadow:0 1px 4px rgba(0,0,0,.12);
+  }
+  .back-to-projects:hover{text-decoration:none; background:#fff}
+
+  .hero{
+    background:linear-gradient(120deg,#0f766e 0%,#0891b2 46%,#2563eb 100%);
+    color:#fff; padding:56px 24px 48px;
+  }
+  .hero-inner{max-width:920px; margin:0 auto}
+  .hero h1{margin:0 0 10px; font-size:2.08rem; line-height:1.2; letter-spacing:-.01em}
+  .hero p{margin:0; font-size:1.08rem; max-width:760px; color:#ecfeff}
+  .chips{margin-top:22px; display:flex; flex-wrap:wrap; gap:10px}
+  .chip{
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.30);
+    padding:5px 12px; border-radius:999px; font-size:.82rem;
+  }
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px}
+  main{padding:34px 0 64px; min-width:0}
+
+  section{margin-bottom:44px; scroll-margin-top:18px}
+  section > h2{font-size:1.5rem; margin:0 0 6px; letter-spacing:-.01em; display:flex; align-items:center; gap:10px}
+  section > h2 .num{
+    font-size:.8rem; font-weight:700; color:#fff; background:var(--accent);
+    width:26px; height:26px; border-radius:7px;
+    display:inline-flex; align-items:center; justify-content:center; flex:0 0 auto;
+  }
+  .lead{color:var(--muted); margin:.2rem 0 1.2rem}
+  p{margin:.6rem 0}
+
+  .grid{
+    display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px; margin:16px 0;
+  }
+  .mini-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:16px 18px;
+  }
+  .mini-card h3{margin:.1rem 0 .45rem; font-size:1.03rem}
+  .mini-card p{margin:0; color:var(--muted); font-size:.95rem}
+
+  .flow{
+    display:grid; grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:10px; margin:18px 0;
+  }
+  .flow-step{
+    background:#fff; border:1px solid var(--line); border-radius:10px;
+    padding:12px 10px; text-align:center; font-size:.88rem; color:var(--muted);
+  }
+  .flow-step strong{display:block; color:var(--ink); margin-bottom:4px}
+
+  /* single full-width figure */
+  .image{
+    width:100%; border:1px solid var(--line); border-radius:var(--radius);
+    margin:16px 0 6px; background:#fff;
+  }
+  .caption{color:var(--faint); font-size:.84rem; text-align:center; margin:0 0 4px}
+
+  /* two figures side by side */
+  .img-row{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:16px 0}
+  .img-row figure{margin:0}
+  .img-row img{width:100%; border:1px solid var(--line); border-radius:var(--radius); background:#fff; display:block}
+  .img-row figcaption{color:var(--faint); font-size:.84rem; text-align:center; margin:6px 0 0}
+
+  .links-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 0}
+  .btn-link{
+    display:inline-block; padding:7px 16px; border-radius:8px;
+    border:1px solid var(--accent); color:var(--accent); font-weight:600; font-size:.9rem;
+  }
+  .btn-link:hover{background:var(--accent); color:#fff; text-decoration:none}
+
+  .skills{margin-top:20px; font-size:.95rem; color:var(--muted)}
+  .skills strong{color:var(--ink); letter-spacing:.04em}
+  .skills a{font-weight:600}
+
+  footer{
+    border-top:1px solid var(--line); padding:24px 0 0;
+    color:var(--muted); font-size:.9rem; margin-top:8px;
+  }
+
+  @media (max-width:760px){
+    .hero{padding:54px 20px 40px}
+    .hero h1{font-size:1.75rem}
+    .wrap{padding:0 18px}
+    .grid{grid-template-columns:1fr}
+    .flow{grid-template-columns:1fr}
+    .img-row{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<a class="back-to-projects" href="/projects/">← Projects</a>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Upper Limb Rehabilitation Robots</h1>
+    <p>
+      Akso — a desktop upper-limb rehabilitation training robot for stroke patients.
+      A 3D-printed single-DOF manipulator, an STM32/FreeRTOS embedded controller,
+      quintic-polynomial trajectory planning with PID position control, and a CHAI3D
+      virtual scene together deliver safe passive and resistance training.
+    </p>
+    <div class="chips">
+      <span class="chip">Solidworks &amp; 3D Printing</span>
+      <span class="chip">FEA Structural Optimization</span>
+      <span class="chip">STM32 · FreeRTOS</span>
+      <span class="chip">CAN · FOC Motor Drive</span>
+      <span class="chip">Trajectory Planning · PID</span>
+      <span class="chip">CHAI3D Virtual Training</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+
+    <section id="overview">
+      <h2><span class="num">1</span>Overview</h2>
+      <p class="lead">
+        A desktop robot that takes over part of the repetitive, high-intensity work of
+        post-stroke upper-limb training.
+      </p>
+      <p>
+        Stroke is a leading cause of motor disability: most survivors are left with some
+        degree of hemiparesis, and timely, repetitive training in the first months strongly
+        influences recovery. Professional therapists, however, are in short supply, and
+        one-to-one manual training is exhausting, monotonous, and hard to standardize.
+      </p>
+      <p>
+        Akso (named after the Greek goddess of health) is a desktop, single-degree-of-freedom
+        upper-limb rehabilitation training robot designed for this scenario. The patient's
+        forearm rests on a rotating arm and grips a handle; the robot then either drives the
+        limb along planned trajectories (passive mode, for patients with little voluntary
+        movement) or applies adjustable resistance against the patient's own motion
+        (resistance mode, for later-stage strength training).
+      </p>
+      <p>
+        The project covers the full system stack: mechanical design and 3D printing,
+        finite-element structural optimization, a real-time embedded control system,
+        kinematic and dynamic modeling, trajectory planning and PID position control with
+        Matlab/Simulink co-simulation, physical tracking experiments, and a Windows host
+        application connected to a virtual training environment.
+      </p>
+
+      <img src="/assets/img/projects/akso_in_use.jpg"
+           alt="Akso upper-limb rehabilitation robot during a training session"
+           class="image">
+      <p class="caption">
+        Akso in use: the forearm rests on the rotating arm while the screen shows the virtual training task.
+      </p>
+    </section>
+
+    <section id="architecture">
+      <h2><span class="num">2</span>System Architecture</h2>
+      <p class="lead">
+        From the host PC to the patient's limb, three subsystems — host software, embedded
+        controller, and mechanism — form one closed loop.
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <strong>Plan</strong>
+          The host PC sets the training task and target trajectory
+        </div>
+        <div class="flow-step">
+          <strong>Command</strong>
+          A Bluetooth serial link sends targets to the STM32 controller
+        </div>
+        <div class="flow-step">
+          <strong>Drive</strong>
+          The CAN bus delivers torque commands to the C620 FOC ESC
+        </div>
+        <div class="flow-step">
+          <strong>Train</strong>
+          The M3508 gearmotor rotates the arm and guides the limb
+        </div>
+        <div class="flow-step">
+          <strong>Feedback</strong>
+          Encoder and force signals close the loop and update the virtual scene
+        </div>
+      </div>
+
+      <p>
+        The MFC host program exchanges data with the CHAI3D virtual scene through shared
+        memory and talks to the STM32 main controller over a wireless Bluetooth serial link,
+        so no cable disturbs the moving arm. The controller runs FreeRTOS, computes the
+        control law, and commands the C620 electronic speed controller over a 1&nbsp;Mbps CAN
+        bus; the ESC drives the M3508 motor with field-oriented control and streams rotor
+        angle, speed, torque current, and temperature back in real time. A single-axis force
+        sensor at the handle measures the human–robot interaction force.
+      </p>
+    </section>
+
+    <section id="mechanical">
+      <h2><span class="num">3</span>Mechanical Design &amp; Structural Optimization</h2>
+      <p class="lead">
+        A 3D-printed single-bar arm rotating on a crossed roller bearing, verified and
+        optimized with finite-element analysis.
+      </p>
+
+      <div class="grid">
+        <div class="mini-card">
+          <h3>Base and single-bar arm</h3>
+          <p>
+            Designed in Solidworks and 3D printed: the base in photosensitive resin (SLA),
+            the arm in PLA (FDM, 100% infill). Sliding handle mounts let the effective arm
+            length be adjusted to each patient's limb.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Crossed roller bearing</h3>
+          <p>
+            An RU85 crossed roller bearing carries both the axial load and radial
+            disturbances in one compact, high-precision joint, while a machined flange
+            D-coupling locks the motor shaft to the arm without slip.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Handle</h3>
+          <p>
+            A rubber grip with an inline single-axis force sensor; a free-spinning turntable
+            between handle and arm keeps the wrist orientation unconstrained, protecting the
+            elbow and wrist joints during rotation.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Safety design</h3>
+          <p>
+            Master power cut-off, ESC over-temperature and over-voltage protection, metal
+            protection rods limiting rotation to about ±60°, and torque/speed clamps in both
+            the host software and the firmware.
+          </p>
+        </div>
+      </div>
+
+      <p>
+        Since the cantilevered arm is the main load-bearing part, a static FEA was run in
+        Solidworks Simulation with custom PLA material properties and a 100&nbsp;N load applied
+        at the handle regions. Stress concentrates where the arm meets the load-bearing ring,
+        so an enlarged reinforcement ring was added to spread the contact area: the maximum
+        stress dropped from 1.667×10⁷ to 1.395×10⁷&nbsp;N/m², the tip displacement from
+        12.47&nbsp;mm to 10.05&nbsp;mm, and the minimum safety factor rose from 3.03 to 3.512.
+      </p>
+
+      <div class="img-row">
+        <figure>
+          <img src="/assets/img/projects/akso_structure.png" alt="Structure of the Akso rehabilitation robot">
+          <figcaption>Overall structure: arm, bearing, flange coupling, handle, and protection rods.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/projects/akso_fea.png" alt="FEA stress result of the optimized arm">
+          <figcaption>FEA of the optimized arm: lower peak stress and a safety factor of 3.512.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="embedded">
+      <h2><span class="num">4</span>Embedded Control System</h2>
+      <p class="lead">
+        An STM32 real-time controller drives a RoboMaster gearmotor over CAN and reports
+        back to the host over Bluetooth.
+      </p>
+
+      <div class="grid">
+        <div class="mini-card">
+          <h3>Main controller</h3>
+          <p>
+            DJI RoboMaster Development Board Type A (STM32F427IIH6 @ 180&nbsp;MHz), configured
+            with STM32CubeMX/HAL. FreeRTOS schedules the CAN, Bluetooth, and control tasks to
+            meet the system's real-time, multi-threaded requirements.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Actuation</h3>
+          <p>
+            An M3508 P19 brushless DC gearmotor (≈19.2:1, rated 3&nbsp;N·m / 469&nbsp;rpm) with a
+            C620 FOC ESC. Output force at the handle is kept within the 0–45&nbsp;N range
+            recommended for upper-limb training.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Communication</h3>
+          <p>
+            A 1&nbsp;Mbps CAN bus carries current commands and encoder/torque/temperature
+            feedback between controller and ESC; an HC-05 Bluetooth serial module (~10&nbsp;m)
+            links the controller to the PC without cables.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Sensing and power</h3>
+          <p>
+            The ESC-decoded encoder provides joint angle and speed; an HYLY-019 single-axis
+            force sensor (20&nbsp;kg rated) at the handle measures push–pull force. A 0–24&nbsp;V
+            adjustable DC supply powers the drive system.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="modeling">
+      <h2><span class="num">5</span>Modeling &amp; Trajectory Planning</h2>
+      <p class="lead">
+        Kinematic, dynamic, and motor models provide the basis for smooth, safe motion
+        planning.
+      </p>
+      <p>
+        Forward and inverse kinematics were derived with the Denavit–Hartenberg convention,
+        and a Monte-Carlo simulation of the reachable end-points produced the fan-shaped
+        planar workspace bounded by the ±60° protection rods (end-point radius up to
+        330&nbsp;mm). The dynamics follow from the Euler–Lagrange equation: with the base frame
+        on the rotation axis the model reduces to τ&nbsp;=&nbsp;I<sub>zz</sub>θ̈&nbsp;+&nbsp;fθ̇,
+        with the inertia computed analytically part-by-part and cross-checked against
+        Solidworks mass properties. The DC motor was modeled from its electrical and
+        mechanical equations plus the gearbox ratio and efficiency, recovering undocumented
+        parameters from the mechanical time constant.
+      </p>
+      <p>
+        Trajectories are planned with quintic-polynomial blends so that position, velocity,
+        and acceleration all stay continuous across an accelerate–cruise–decelerate profile:
+        the arm sweeps 0→60° in 2.5&nbsp;s with 0.5&nbsp;s blend phases and a π/6&nbsp;rad/s cruise
+        speed. The full chain — trajectory generator, PID controller with voltage limiting,
+        motor and gearbox model, and arm dynamics — was co-simulated in Matlab/Simulink and
+        tracked the planned path with near-zero error.
+      </p>
+
+      <div class="img-row">
+        <figure>
+          <img src="/assets/img/projects/akso_workspace.png" alt="Monte-Carlo workspace of the Akso robot">
+          <figcaption>Monte-Carlo workspace: a fan-shaped planar region bounded by the ±60° limit.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/projects/akso_trajectory.png" alt="Quintic polynomial trajectory and Simulink tracking result">
+          <figcaption>Quintic-polynomial trajectory and Simulink position-tracking result.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="experiments">
+      <h2><span class="num">6</span>Position Control Experiments</h2>
+      <p class="lead">
+        The position control system was validated on the physical robot with step, quintic,
+        and sinusoidal reference trajectories.
+      </p>
+      <p>
+        Following a 60° step, the arm settles in about 2.5&nbsp;s with virtually no overshoot or
+        steady-state error — the dynamic response is deliberately softened so that a sudden
+        setpoint change can never jerk the patient's limb. Tracking the quintic-polynomial
+        trajectory is close under no load; in loaded trials with different users the response
+        lags more as resistance grows, but the torque margin is sufficient to carry the limb
+        to the target along the planned path.
+      </p>
+      <p>
+        For passive training, a ±60° sinusoidal reference with a 10&nbsp;s period swings the arm
+        back and forth continuously. Even under load, the peak-to-peak amplitude of the
+        actual motion matches the reference, confirming that the planned training motion is
+        delivered effectively to limbs with different impairment levels.
+      </p>
+
+      <div class="img-row">
+        <figure>
+          <img src="/assets/img/projects/akso_quintic_tracking.png" alt="Tracking of the quintic trajectory with and without load">
+          <figcaption>Quintic-trajectory tracking: no-load vs. loaded trials with different users.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/projects/akso_sine_tracking.png" alt="Tracking of the sinusoidal trajectory under load">
+          <figcaption>Sinusoidal tracking for passive training: amplitude preserved under load.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="host">
+      <h2><span class="num">7</span>Host Software &amp; Virtual Training</h2>
+      <p class="lead">
+        An MFC host application and a CHAI3D virtual scene make the training observable,
+        configurable, and engaging.
+      </p>
+      <p>
+        The host program (Visual Studio + MFC) opens separate read and send threads for the
+        Bluetooth serial link, giving full-duplex communication with the controller. It
+        displays the joint angle in real time, logs data for the therapist, supports position
+        reset and offline slider-based testing, and clamps every outgoing command to a safe
+        amplitude. Communication between the host process and the virtual scene runs through
+        shared memory implemented with memory-mapped files, one of the fastest inter-process
+        communication methods on Windows.
+      </p>
+      <p>
+        The virtual environment, built with CHAI3D and OpenGL, presents a two-ball chasing
+        game matched to the robot's circular motion: the patient steers a ball by moving the
+        robot arm to catch a target ball, with an on-screen force-feedback bar and hotkeys
+        for adjusting control gains. Clinical literature suggests such virtual-reality
+        feedback improves engagement and training outcomes.
+      </p>
+
+      <div class="img-row">
+        <figure>
+          <img src="/assets/img/projects/akso_gui.png" alt="MFC host application of the Akso robot">
+          <figcaption>MFC host application: serial connection, live angles, logging, and offline testing.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/projects/akso_vr.png" alt="CHAI3D two-ball chasing virtual scene">
+          <figcaption>CHAI3D virtual scene: the patient drives the blue ball to chase the red target.</figcaption>
+        </figure>
+      </div>
+
+      <div class="links-row">
+        <a class="btn-link" href="https://www.chai3d.org/">CHAI3D</a>
+        <a class="btn-link" href="https://www.robomaster.com/">RoboMaster</a>
+      </div>
+    </section>
+
+    <p class="skills">
+      <strong>TECHNICAL SKILLS:</strong>
+      Solidworks &amp; Simulation (FEA) · 3D printing (SLA/FDM) · STM32 · FreeRTOS ·
+      CAN bus · Robot kinematics &amp; dynamics · Trajectory planning · PID control ·
+      MATLAB/Simulink · MFC (C++) ·
+      <a href="https://www.chai3d.org/">CHAI3D</a> / OpenGL
+    </p>
+
+    <footer>
+      Bachelor thesis (graduation design), Robot Engineering, School of Automation,
+      Southeast University, 2020. Virtual scene built with
+      <a href="https://www.chai3d.org/">CHAI3D</a>.
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  // Gracefully hide any figure/image whose file isn't present yet (e.g. before the
+  // akso_* images are added), so the page never shows a broken-image icon. Once an
+  // image file exists, it loads normally and this does nothing.
+  document.querySelectorAll('main img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var fig = img.closest('figure');
+      if (fig) { fig.style.display = 'none'; return; }
+      img.style.display = 'none';
+      var next = img.nextElementSibling;
+      if (next && next.classList.contains('caption')) next.style.display = 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
+{% endraw %}

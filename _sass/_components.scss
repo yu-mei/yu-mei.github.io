@@ -158,7 +158,7 @@ ul.task-list input[type="checkbox"] {
   .project-meta {
     font-size: 0.85rem;
     font-style: italic;
-    color: var(--global-text-color-light);
+    color: var(--global-text-color);
     margin-bottom: 0.4rem;
   }
 
@@ -170,16 +170,15 @@ ul.task-list input[type="checkbox"] {
     text-align: justify;
   }
 
-  // link buttons under a project (Video / Code / Website …), styled like publications
+  // link buttons under a project (Video / Code / Website …), same size as publication buttons
   .links {
-    margin-top: 0.65rem;
+    margin: 0.5rem 0 0.7rem;
 
     a.btn {
       color: var(--global-text-color);
       border: 1px solid var(--global-text-color);
       border-radius: 8px;
-      padding: 0.2rem 0.9rem;
-      font-size: 0.8rem;
+      padding: 0.25rem 1rem;
       margin-right: 0.35rem;
       transition:
         color 0.15s ease,
@@ -198,22 +197,25 @@ ul.task-list input[type="checkbox"] {
 // Home page — clean card framing + subtle hover; rounder link buttons
 
 .home-highlights {
-  // each entry = a card (no left accent)
+  // each entry = a card with a slight grey tint (works on light & dark backgrounds)
   .publications ol.bibliography > li,
   .projects .project-item {
-    background-color: var(--global-card-bg-color);
+    background-color: rgba(128, 128, 128, 0.08);
     border: 1px solid var(--global-divider-color);
     border-radius: 12px;
     padding: 1.1rem 1.4rem;
     margin-bottom: 1.25rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition: box-shadow 0.2s ease;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
   }
 
-  // subtle "light up" on hover — soft shadow only, no size/transform change
+  // selected/hover — clearly "lifts": grows a little + stronger shadow
   .publications ol.bibliography > li:hover,
   .projects .project-item:hover {
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    transform: scale(1.02);
   }
 
   // rounder link buttons (Paper / Project / Code) + clearer color-change hover

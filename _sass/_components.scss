@@ -194,49 +194,48 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-// Home page — clean card framing + subtle hover; rounder link buttons
+// Card framing for publication & project list items — applied everywhere they appear
+// (home "Selected" sections, the /publications/ page, and the /projects/ page).
 
-.home-highlights {
-  // each entry = a card with a slight grey tint (works on light & dark backgrounds)
-  .publications ol.bibliography > li,
-  .projects .project-item {
-    background-color: rgba(128, 128, 128, 0.08);
-    border: 1px solid var(--global-divider-color);
-    border-radius: 12px;
-    padding: 1.1rem 1.4rem;
-    margin-bottom: 1.25rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-    transition:
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
-  }
+// each entry = a card with a slight grey tint (works on light & dark backgrounds)
+.publications ol.bibliography > li,
+.projects .project-item {
+  background-color: rgba(128, 128, 128, 0.08);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
 
-  // selected/hover — clearly "lifts": grows a little + stronger shadow
-  .publications ol.bibliography > li:hover,
-  .projects .project-item:hover {
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
-    transform: scale(1.02);
-  }
+// selected/hover — clearly "lifts": grows a little + stronger shadow
+.publications ol.bibliography > li:hover,
+.projects .project-item:hover {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  transform: scale(1.02);
+}
 
-  // the collapsed abstract/award boxes carry a background-colored dashed border that
-  // shows as a faint line on the grey card — hide it while collapsed
-  .publications ol.bibliography > li .hidden:not(.open) {
-    border: 0;
-  }
+// the collapsed abstract/award boxes carry a background-colored dashed border that
+// shows as a faint line on the grey card — hide it while collapsed
+.publications ol.bibliography > li .hidden:not(.open) {
+  border: 0;
+}
 
-  // rounder link buttons (Paper / Project / Code) + clearer color-change hover
-  .links a.btn {
-    border-radius: 8px;
-    transition:
-      color 0.15s ease,
-      border-color 0.15s ease,
-      background-color 0.15s ease;
+// rounder publication link buttons + clearer color-change hover (projects handled above)
+.publications .links a.btn {
+  border-radius: 8px;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease;
 
-    &:hover {
-      color: var(--global-theme-color);
-      border-color: var(--global-theme-color);
-      background-color: rgba(0, 0, 0, 0.03);
-    }
+  &:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    background-color: rgba(0, 0, 0, 0.03);
   }
 }
 

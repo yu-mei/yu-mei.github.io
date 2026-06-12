@@ -1,0 +1,41 @@
+<input
+  type="text"
+  id="project-search"
+  class="search bibsearch-form-input"
+  placeholder="Type to filter projects"
+  spellcheck="false"
+  autocomplete="off">
+
+<script>
+  (function () {
+    var input = document.getElementById("project-search");
+    var container = document.querySelector(".projects");
+    if (!input || !container) return;
+
+    function applyFilter() {
+      var q = input.value.trim().toLowerCase();
+
+      // show/hide each project card by its text content
+      container.querySelectorAll(".project-item").forEach(function (item) {
+        var match = q === "" || item.textContent.toLowerCase().indexOf(q) !== -1;
+        item.style.display = match ? "" : "none";
+      });
+
+      // hide a year heading when all of its projects are filtered out
+      container.querySelectorAll("h2.year").forEach(function (heading) {
+        var visible = false;
+        var el = heading.nextElementSibling;
+        while (el && !(el.tagName === "H2" && el.classList.contains("year"))) {
+          if (el.classList.contains("project-item") && el.style.display !== "none") {
+            visible = true;
+            break;
+          }
+          el = el.nextElementSibling;
+        }
+        heading.style.display = visible ? "" : "none";
+      });
+    }
+
+    input.addEventListener("input", applyFilter);
+  })();
+</script>

@@ -4,7 +4,7 @@
 {% endif %}
 <div class="project-item row">
   {% if project.img %}
-    <div class="col-sm-4 project-thumb">
+    <div class="col col-sm-4 project-thumb">
       <a href="{{ project_link }}">
         {%
           include figure.liquid
@@ -20,7 +20,9 @@
   {% endif %}
   <div class="{% if project.img %}col-sm-8{% else %}col-sm-12{% endif %} project-info">
     <a class="project-title" href="{{ project_link }}">{{ project.title }}</a>
-    {% if project.meta %}<div class="project-meta">{{ project.meta }}</div>{% endif %}
+    {% if project.meta or project.year %}
+      <div class="project-meta">{{ project.meta }}{% if project.meta and project.year %}, {% endif %}{{ project.year }}</div>
+    {% endif %}
     <p class="project-desc">{{ project.description }}</p>
     {% if project.pdf or project.code or project.video or project.website %}
       <div class="links">

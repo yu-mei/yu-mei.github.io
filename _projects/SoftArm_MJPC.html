@@ -1,9 +1,10 @@
 ---
 layout: none
-title: SoftArm MJPC
-description: "Use MuJoCo rigid links to simulate a pneumatic soft arm, then build a real-time predictive controller on Google DeepMind's MuJoCo MPC framework. It continuously predicts the arm's future motion and optimizes the actuation inputs to reduce tracking error in real time, letting the soft arm smoothly follow a dynamically moving target."
+title: MuJoCo-based MPC for Soft Robotic Arms
+description: "A rigid-link MuJoCo surrogate enables real-time, sampling-based model-predictive control of a pneumatic soft arm, driving accurate tracking of dynamically moving targets."
 img: assets/img/projects/MJPC_SoftArm.gif
 meta: "In progress, 2026"
+video: https://youtu.be/R1iKUpCJgIM
 importance: 2
 selected: true
 ---
@@ -13,7 +14,7 @@ selected: true
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SoftArm MJPC · Project Introduction</title>
+<title>MuJoCo-based MPC for Soft Robotic Arms · Project Introduction</title>
 <style>
   :root{
     --ink:#1f2933; --muted:#52606d; --faint:#7b8794;
@@ -90,10 +91,10 @@ selected: true
 
 <header class="hero">
   <div class="hero-inner">
-    <h1>SoftArm MJPC</h1>
-    <p>A MuJoCo simulation of a pneumatic soft arm built from rigid links, paired
-       with a real-time predictive controller on Google DeepMind's MuJoCo MPC —
-       so the soft arm smoothly follows a dynamically moving target.</p>
+    <h1>MuJoCo-based MPC for Soft Robotic Arms</h1>
+    <p>A rigid-link MuJoCo surrogate enables real-time, sampling-based model-predictive
+       control of a pneumatic soft arm, driving accurate tracking of dynamically moving
+       targets.</p>
     <div class="chips">
       <span class="chip">MuJoCo</span>
       <span class="chip">MJPC · DeepMind</span>

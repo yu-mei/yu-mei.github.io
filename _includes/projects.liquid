@@ -23,6 +23,7 @@
     {% if project.meta or project.year %}
       <div class="project-meta">{{ project.meta }}{% if project.meta and project.year %}, {% endif %}{{ project.year }}</div>
     {% endif %}
+    {% if project.meta2 %}<div class="project-meta">{{ project.meta2 }}</div>{% endif %}
     <p class="project-desc">{{ project.description }}</p>
     {% if project.pdf or project.code or project.video or project.website %}
       <div class="links">

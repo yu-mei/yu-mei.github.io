@@ -455,6 +455,11 @@ ninja.data = [{
           description: "An NXP Cup autonomous vehicle project focused on vision-based line tracking and embedded motion control.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/NXP/";
+            },},{id: "projects-robocup-humanoid-robot",
+          title: 'RoboCup Humanoid Robot',
+          description: "A RoboCup humanoid robot project focused on vision-based line following and bipedal walking control.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/RoboCup/";
             },},{id: "projects-soft-robotic-arm-using-isaac-sim",
           title: 'Soft Robotic Arm Using Isaac Sim',
           description: "A course project exploring Gaussian Process-based MPC for controlling an Isaac Sim soft-arm model in real time, usinng the FEM simulation capabilities of Isaac Sim.",

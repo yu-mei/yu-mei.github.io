@@ -44,6 +44,7 @@ layout: default
     {% if page.research_tags and page.research_tags.size > 0 %}
       <style>
         .research-interests {
+          clear: both; /* drop below the floated profile photo; span full text width */
           margin: 25px 0 10px;
         }
         .research-interests-title {
@@ -64,6 +65,7 @@ layout: default
           padding: 6px 16px;
           border-radius: 999px;
           font-size: 0.9rem;
+          font-weight: 600; /* thicker pill text */
           line-height: 1.4;
           color: var(--global-theme-color);
           border: 1px solid var(--global-divider-color);

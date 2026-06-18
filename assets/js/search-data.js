@@ -445,6 +445,9 @@ ninja.data = [{
           section: "News",},{id: "news-tada-one-paper-bipneu-on-bipolar-pressure-pneumatic-system-for-soft-robots-is-accepted-to-ieee-asme-tmech",
           title: ':tada: One paper BiPneu on bipolar-pressure pneumatic system for soft robots is accepted...',
           description: "",
+          section: "News",},{id: "news-tada-one-paper-on-data-driven-control-of-soft-robots-under-unknown-external-payloads-is-accepted-to-ieee-ra-l",
+          title: ':tada: One paper on data-driven control of soft robots under unknown external payloads...',
+          description: "",
           section: "News",},{id: "projects-5g-intelligent-mobile-robot",
           title: '5G Intelligent Mobile Robot',
           description: "Integrated A* global path planning with Timed Elastic Band local trajectory optimization, enabling efficient global route generation while reducing the computational burden of local navigation.",
@@ -477,7 +480,7 @@ ninja.data = [{
               window.location.href = "/projects/RoboCup/";
             },},{id: "projects-soft-robotic-arm-using-isaac-sim",
           title: 'Soft Robotic Arm Using Isaac Sim',
-          description: "A course project exploring Gaussian Process-based MPC for controlling an Isaac Sim soft-arm model in real time, usinng the FEM simulation capabilities of Isaac Sim.",
+          description: "A course project exploring Gaussian Process-based MPC for controlling an Isaac Sim soft-arm model in real time, using the FEM simulation capabilities of Isaac Sim.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SoftArm_IsaacSim/";
             },},{id: "projects-mujoco-based-mpc-for-soft-robotic-arms",

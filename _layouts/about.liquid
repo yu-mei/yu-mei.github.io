@@ -44,7 +44,7 @@ layout: default
     {% if page.research_tags and page.research_tags.size > 0 %}
       <style>
         .research-interests {
-          clear: both; /* drop below the floated profile photo; span full text width */
+          clear: none; /* sit right under the text; set to `both` to drop below the photo */
           margin: 12px 0 8px;
         }
         .research-interests-title {

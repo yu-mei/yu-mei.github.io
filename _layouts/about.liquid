@@ -59,13 +59,14 @@ layout: default
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
+          max-width: 620px; /* keep pills under the text column; wraps onto ~two lines */
         }
         .research-tag {
           display: inline-block;
           padding: 6px 16px;
           border-radius: 999px;
           font-size: 0.9rem;
-          font-weight: 600; /* thicker pill text */
+          font-weight: 500; /* pill text weight */
           line-height: 1.4;
           color: var(--global-theme-color);
           border: 1px solid var(--global-divider-color);

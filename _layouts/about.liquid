@@ -38,9 +38,10 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
+    <div class="clearfix">
+      {{ content }}
 
-    <!-- Research interests -->
+    <!-- Research interests (kept INSIDE .clearfix so it sits right under the text, not below the photo) -->
     {% if page.research_tags and page.research_tags.size > 0 %}
       <style>
         .research-interests {
@@ -88,6 +89,8 @@ layout: default
         </div>
       </div>
     {% endif %}
+    </div>
+    <!-- end .clearfix -->
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}

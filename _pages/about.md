@@ -21,6 +21,14 @@ announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit:  # leave blank to include all the news in the `_news` folder
+
+# Research-interest pills shown under the about description (edit/add/remove freely)
+research_tags:
+  - Soft Robotics
+  - Soft Actuators & Sensors
+  - Data-driven & Learning-based Control
+  - Control Systems
+  - Mechatronics
 ---
 
 I am a PhD student in the [Smart Microsystems Lab](https://smlab.msu.edu/) at [Michigan State University](https://msu.edu/), advised by [Prof. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/) starting from 2021. Prior to joining MSU, I received my Bachelor degree in Robotics Engineering from the Department of Automation at [Southeast University](https://www.seu.edu.cn/english/) in 2020, advised by [Prof. Aiguo Song](https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en).

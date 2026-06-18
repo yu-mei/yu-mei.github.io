@@ -40,6 +40,52 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Research interests -->
+    {% if page.research_tags and page.research_tags.size > 0 %}
+      <style>
+        .research-interests {
+          margin: 25px 0 10px;
+        }
+        .research-interests-title {
+          text-transform: uppercase;
+          letter-spacing: 0.08em;
+          font-weight: 600;
+          font-size: 0.95rem;
+          color: var(--global-text-color-light);
+          margin-bottom: 12px;
+        }
+        .research-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .research-tag {
+          display: inline-block;
+          padding: 6px 16px;
+          border-radius: 999px;
+          font-size: 0.9rem;
+          line-height: 1.4;
+          color: var(--global-theme-color);
+          border: 1px solid var(--global-divider-color);
+          background-color: rgba(0, 0, 0, 0.03); /* fallback for older browsers */
+          background-color: color-mix(in srgb, var(--global-theme-color) 9%, transparent);
+          transition: background-color 0.2s ease;
+        }
+        .research-tag:hover {
+          background-color: color-mix(in srgb, var(--global-theme-color) 16%, transparent);
+        }
+      </style>
+
+      <div class="research-interests">
+        <div class="research-interests-title">Research Interests</div>
+        <div class="research-tags">
+          {% for tag in page.research_tags %}
+            <span class="research-tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <style>

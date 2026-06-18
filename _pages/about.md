@@ -24,10 +24,8 @@ announcements:
 
 # Research-interest pills shown under the about description (edit/add/remove freely)
 research_tags:
-  - Soft Robotics
-  - Soft Actuators & Sensors
-  - Data-driven & Learning-based Control
-  - Control Systems
+  - Soft Robotics Systems
+  - Learning-based and Data-driven Control
   - Mechatronics
 ---
 

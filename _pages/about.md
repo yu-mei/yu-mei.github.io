@@ -37,9 +37,9 @@ sponsors:
   - name: National Institutes of Health
     image: sponsors/NIH_logo.png
     url: https://www.nih.gov/
-  - name: Great Lakes
+  - name: Great Lakes Fishery Commission
     image: sponsors/GreatLake.png
-    # url:                      # TODO: add the official URL to make this logo clickable
+    url: https://www.glfc.org/
   - name: Michigan Economic Development Corporation (MEDC)
     image: sponsors/MEDC_logo.png
     url: https://www.michiganbusiness.org/

@@ -75,18 +75,18 @@ service_sections:
           Oral Presentation, IEEE/ASME International Conference on Advanced Intelligent Mechatronics, Boston, MA, USA.
         years: "Jul. 2024"
       - text: >-
-          "Designing Control Algorithms to Improve Human-Robot Collaboration and Rehabilitation," Oral Presentation, Admitted Student Day, MSU, East Lansing, MI, USA.
+          Oral Presentation, "Designing Control Algorithms to Improve Human-Robot Collaboration and Rehabilitation," Admitted Student Day, MSU, East Lansing, MI, USA.
         years: "Apr. 2024"
       - text: >-
-          "Design, Fabrication, Modelling and Control of Soft Robotics," Invited Talk, School of Automation, Southeast University, Nanjing, China, virtual.
+          Invited Talk, "Design, Fabrication, Modelling and Control of Soft Robotics," School of Automation, Southeast University, Nanjing, China, virtual.
         years: "Sep. 2023"
       - text: >-
           Oral Presentation, American Control Conference, San Diego, CA, USA.
         years: "May 2023"
       - text: >-
-          Graduate Research Symposium, MSU.
+          Research Presentation, Graduate Research Symposium, MSU.
         years: "2023-2024"
       - text: >-
-          "Soft Pneumatic Manipulator with Stiffness Tuning Capability," Poster Presentation, *Octopus Inspired Biodesign Symposium* by NIH BRAIN Initiative and MSU.
+          Poster Presentation, "Soft Pneumatic Manipulator with Stiffness Tuning Capability," *Octopus Inspired Biodesign Symposium* by NIH BRAIN Initiative and MSU.
         years: "2022"
 ---

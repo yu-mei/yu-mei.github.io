@@ -15,7 +15,7 @@ profile:
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 selected_projects: true # includes selected project cards (projects in _projects/ with selected: true)
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
@@ -37,12 +37,12 @@ sponsors:
   - name: National Institutes of Health
     image: sponsors/NIH_logo.png
     url: https://www.nih.gov/
-  - name: Great Lakes Fishery Commission
-    image: sponsors/GreatLake.png
-    url: https://www.glfc.org/
   - name: Michigan Economic Development Corporation (MEDC)
     image: sponsors/MEDC_logo.png
     url: https://www.michiganbusiness.org/
+  - name: Great Lakes Fishery Commission
+    image: sponsors/GreatLake.png
+    url: https://www.glfc.org/
 ---
 
 I am a PhD student in the [Smart Microsystems Lab](https://smlab.msu.edu/) at [Michigan State University](https://msu.edu/), advised by [Prof. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/) starting from 2021. Prior to joining MSU, I received my Bachelor degree in Robotics Engineering from the Department of Automation at [Southeast University](https://www.seu.edu.cn/english/) in 2020, advised by [Prof. Aiguo Song](https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en).

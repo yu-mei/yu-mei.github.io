@@ -197,6 +197,52 @@ layout: default
       </div>
     {% endif %}
 
+    <!-- Sponsors -->
+    {% if page.sponsors and page.sponsors.size > 0 %}
+      <style>
+        /* same heading look as the other sections (redefined here so the block is self-contained) */
+        .selected-link { text-decoration: none; color: inherit; font-size: 2.0em; margin-right: 10px; }
+        .selected-link:hover { text-decoration: underline; }
+        .selected-divider { flex-grow: 1; height: 1px; background-color: #ccc; }
+
+        .sponsors-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-around; /* uniform horizontal distribution */
+          flex-wrap: wrap;
+          gap: 24px;
+          margin: 18px 0 8px;
+        }
+        .sponsors-row a { display: inline-flex; align-items: center; }
+        .sponsors-row img {
+          max-height: 80px; /* normalize logo heights */
+          max-width: 170px;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+        }
+      </style>
+
+      <!-- Fancy Divider (non-clickable title, matches Selected Projects) -->
+      <div style="display: flex; align-items: center; margin: 30px 0 10px;">
+        <span class="selected-link">Sponsors</span>
+        <div class="selected-divider"></div>
+      </div>
+
+      <div class="sponsors-row">
+        {% for s in page.sponsors %}
+          {% assign sponsor_img = s.image | prepend: 'assets/img/' | relative_url %}
+          {% if s.url %}
+            <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" title="{{ s.name }}">
+              <img src="{{ sponsor_img }}" alt="{{ s.name }}" loading="lazy" />
+            </a>
+          {% else %}
+            <img src="{{ sponsor_img }}" alt="{{ s.name }}" loading="lazy" />
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
 
     <!-- Social -->
     {% if page.social %}

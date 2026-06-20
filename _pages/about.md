@@ -27,6 +27,21 @@ research_tags:
   - Soft Robotics Systems
   - Learning-based and Data-driven Control
   - Mechatronics
+
+# Sponsors logos shown under Selected Projects (edit/add/remove freely)
+sponsors:
+  - name: National Science Foundation
+    image: sponsors/NSF_logo.png
+    url: https://www.nsf.gov/
+  - name: National Institutes of Health
+    image: sponsors/NIH_logo.png
+    url: https://www.nih.gov/
+  - name: Great Lakes
+    image: sponsors/GreatLake.png
+    # url:                      # TODO: add the official URL to make this logo clickable
+  - name: Michigan Economic Development Corporation (MEDC)
+    image: sponsors/MEDC_logo.png
+    url: https://www.michiganbusiness.org/
 ---
 
 I am a PhD student in the [Smart Microsystems Lab](https://smlab.msu.edu/) at [Michigan State University](https://msu.edu/), advised by [Prof. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/) starting from 2021. Prior to joining MSU, I received my Bachelor degree in Robotics Engineering from the Department of Automation at [Southeast University](https://www.seu.edu.cn/english/) in 2020, advised by [Prof. Aiguo Song](https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en).

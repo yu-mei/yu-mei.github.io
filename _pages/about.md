@@ -25,7 +25,8 @@ announcements:
 # Research-interest pills shown under the about description (edit/add/remove freely)
 research_tags:
   - Soft Robotics Systems
-  - Learning-based and Data-driven Control
+  - Learning-based Modeling and Control
+  - Sim-to-Real Robotics
   - Mechatronics
 
 # Sponsors logos shown under Selected Projects (edit/add/remove freely)

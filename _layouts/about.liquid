@@ -217,8 +217,8 @@ layout: default
         }
         .sponsors-row a { display: inline-flex; align-items: center; }
         .sponsors-row img {
-          /* base max size is set inline per logo (see sponsor_base_h/w below) so each
-             sponsor can be scaled individually via its `size` (percent) front-matter field */
+          max-height: 130px; /* default size; a sponsor's `size` (percent) overrides this inline */
+          max-width: 250px;
           width: auto;
           height: auto;
           object-fit: contain;
@@ -231,23 +231,26 @@ layout: default
         <div class="selected-divider"></div>
       </div>
 
-      {% comment %} Base logo size (px). Each sponsor's optional `size` (percent, default 100) scales it. {% endcomment %}
+      {% comment %} Base size (px) — must match the CSS default above. A sponsor's optional `size`
+         (percent) scales it via an inline override; omitting `size` uses the CSS default. {% endcomment %}
       {% assign sponsor_base_h = 130 %}
       {% assign sponsor_base_w = 250 %}
 
       <div class="sponsors-row">
         {% for s in page.sponsors %}
           {% assign sponsor_img = s.image | prepend: 'assets/img/' | relative_url %}
-          {% assign size_pct = s.size | default: 100 %}
-          {% assign max_h = sponsor_base_h | times: size_pct | divided_by: 100 %}
-          {% assign max_w = sponsor_base_w | times: size_pct | divided_by: 100 %}
-          {% capture sponsor_style %}max-height: {{ max_h }}px; max-width: {{ max_w }}px;{% endcapture %}
+          {% assign sponsor_style = '' %}
+          {% if s.size %}
+            {% assign max_h = sponsor_base_h | times: s.size | divided_by: 100 %}
+            {% assign max_w = sponsor_base_w | times: s.size | divided_by: 100 %}
+            {% capture sponsor_style %} style="max-height: {{ max_h }}px; max-width: {{ max_w }}px;"{% endcapture %}
+          {% endif %}
           {% if s.url %}
             <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" title="{{ s.name }}">
-              <img src="{{ sponsor_img }}" alt="{{ s.name }}" style="{{ sponsor_style }}" loading="lazy" />
+              <img src="{{ sponsor_img }}" alt="{{ s.name }}"{{ sponsor_style }} loading="lazy" />
             </a>
           {% else %}
-            <img src="{{ sponsor_img }}" alt="{{ s.name }}" style="{{ sponsor_style }}" loading="lazy" />
+            <img src="{{ sponsor_img }}" alt="{{ s.name }}"{{ sponsor_style }} loading="lazy" />
           {% endif %}
         {% endfor %}
       </div>

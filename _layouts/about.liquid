@@ -215,13 +215,15 @@ layout: default
           gap: 48px; /* spacing between logos */
           margin: 18px 0 8px;
         }
-        .sponsors-row a { display: inline-flex; align-items: center; }
+        .sponsors-row a { display: inline-flex; align-items: center; justify-content: center; }
         .sponsors-row img {
-          max-height: 130px; /* default size; a sponsor's `size` (percent) overrides this inline */
+          max-height: 130px; /* normalized base fit; `size` visually zooms after this */
           max-width: 250px;
           width: auto;
           height: auto;
           object-fit: contain;
+          transform: scale(var(--sponsor-scale, 1));
+          transform-origin: center;
         }
       </style>
 
@@ -231,19 +233,14 @@ layout: default
         <div class="selected-divider"></div>
       </div>
 
-      {% comment %} Base size (px) — must match the CSS default above. A sponsor's optional `size`
-         (percent) scales it via an inline override; omitting `size` uses the CSS default. {% endcomment %}
-      {% assign sponsor_base_h = 130 %}
-      {% assign sponsor_base_w = 250 %}
-
       <div class="sponsors-row">
         {% for s in page.sponsors %}
           {% assign sponsor_img = s.image | prepend: 'assets/img/' | relative_url %}
+          {% assign sponsor_size = s["size"] %}
           {% assign sponsor_style = '' %}
-          {% if s.size %}
-            {% assign max_h = sponsor_base_h | times: s.size | divided_by: 100 %}
-            {% assign max_w = sponsor_base_w | times: s.size | divided_by: 100 %}
-            {% capture sponsor_style %} style="max-height: {{ max_h }}px; max-width: {{ max_w }}px;"{% endcapture %}
+          {% if sponsor_size %}
+            {% assign sponsor_scale = sponsor_size | divided_by: 100.0 %}
+            {% capture sponsor_style %} style="--sponsor-scale: {{ sponsor_scale }};"{% endcapture %}
           {% endif %}
           {% if s.url %}
             <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" title="{{ s.name }}">

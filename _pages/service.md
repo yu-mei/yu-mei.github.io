@@ -69,24 +69,24 @@ service_sections:
   - title: Invited Talks
     items:
       - text: >-
-          Oral Presentation, The 5th Modeling, Estimation and Control Conference (MECC 2025), Pittsburgh, PA, USA.
+          Oral Presentation, MECC 2025, Pittsburgh, PA, USA.
         years: "Oct. 2025"
       - text: >-
-          Oral Presentation, IEEE/ASME International Conference on Advanced Intelligent Mechatronics, Boston, MA, USA.
+          Oral Presentation, IEEE AIM 2024, Boston, MA, USA.
         years: "Jul. 2024"
       - text: >-
-          Oral Presentation, "Designing Control Algorithms to Improve Human-Robot Collaboration and Rehabilitation," Admitted Student Day, MSU, East Lansing, MI, USA.
+          Oral Presentation, MSU Admitted Student Day, "Designing Control Algorithms to Improve Human-Robot Collaboration and Rehabilitation," East Lansing, MI, USA.
         years: "Apr. 2024"
       - text: >-
-          Invited Talk, "Design, Fabrication, Modelling and Control of Soft Robotics," School of Automation, Southeast University, Nanjing, China, virtual.
+          Invited Talk, School of Automation, Southeast University, "Design, Fabrication, Modelling and Control of Soft Robotics," Nanjing, China, virtual.
         years: "Sep. 2023"
       - text: >-
-          Oral Presentation, American Control Conference, San Diego, CA, USA.
+          Oral Presentation, ACC 2023, San Diego, CA, USA.
         years: "May 2023"
       - text: >-
           Research Presentation, Graduate Research Symposium, MSU.
         years: "2023-2024"
       - text: >-
-          Poster Presentation, "Soft Pneumatic Manipulator with Stiffness Tuning Capability," *Octopus Inspired Biodesign Symposium* by NIH BRAIN Initiative and MSU.
-        years: "2022"
+          Poster Presentation, "Soft Pneumatic Manipulator with Stiffness Tuning Capability," *Octopus Inspired Biodesign Symposium* by NIH BRAIN Initiative and MSU, East Lansing, MI, USA.
+        years: "May 2022"
 ---

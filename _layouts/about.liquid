@@ -144,6 +144,7 @@ layout: default
           text-decoration: none;
           color: inherit;
           font-size: 2.0em;
+          font-weight: 400; /* match News/Publications link weight (base body weight is 300) */
           margin-right: 10px;
         }
         .selected-link:hover {
@@ -174,6 +175,7 @@ layout: default
           text-decoration: none;
           color: inherit;
           font-size: 2.0em;
+          font-weight: 400; /* match News/Publications link weight (base body weight is 300) */
           margin-right: 10px;
         }
         .selected-link:hover {
@@ -201,7 +203,7 @@ layout: default
     {% if page.sponsors and page.sponsors.size > 0 %}
       <style>
         /* same heading look as the other sections (redefined here so the block is self-contained) */
-        .selected-link { text-decoration: none; color: inherit; font-size: 2.0em; margin-right: 10px; }
+        .selected-link { text-decoration: none; color: inherit; font-size: 2.0em; font-weight: 400; margin-right: 10px; }
         .selected-link:hover { text-decoration: underline; }
         .selected-divider { flex-grow: 1; height: 1px; background-color: #ccc; }
 
@@ -215,8 +217,8 @@ layout: default
         }
         .sponsors-row a { display: inline-flex; align-items: center; }
         .sponsors-row img {
-          max-height: 130px; /* normalize logo heights */
-          max-width: 250px;
+          /* base max size is set inline per logo (see sponsor_base_h/w below) so each
+             sponsor can be scaled individually via its `size` (percent) front-matter field */
           width: auto;
           height: auto;
           object-fit: contain;
@@ -229,15 +231,23 @@ layout: default
         <div class="selected-divider"></div>
       </div>
 
+      {% comment %} Base logo size (px). Each sponsor's optional `size` (percent, default 100) scales it. {% endcomment %}
+      {% assign sponsor_base_h = 130 %}
+      {% assign sponsor_base_w = 250 %}
+
       <div class="sponsors-row">
         {% for s in page.sponsors %}
           {% assign sponsor_img = s.image | prepend: 'assets/img/' | relative_url %}
+          {% assign size_pct = s.size | default: 100 %}
+          {% assign max_h = sponsor_base_h | times: size_pct | divided_by: 100 %}
+          {% assign max_w = sponsor_base_w | times: size_pct | divided_by: 100 %}
+          {% capture sponsor_style %}max-height: {{ max_h }}px; max-width: {{ max_w }}px;{% endcapture %}
           {% if s.url %}
             <a href="{{ s.url }}" target="_blank" rel="noopener noreferrer" title="{{ s.name }}">
-              <img src="{{ sponsor_img }}" alt="{{ s.name }}" loading="lazy" />
+              <img src="{{ sponsor_img }}" alt="{{ s.name }}" style="{{ sponsor_style }}" loading="lazy" />
             </a>
           {% else %}
-            <img src="{{ sponsor_img }}" alt="{{ s.name }}" loading="lazy" />
+            <img src="{{ sponsor_img }}" alt="{{ s.name }}" style="{{ sponsor_style }}" loading="lazy" />
           {% endif %}
         {% endfor %}
       </div>

@@ -43,6 +43,7 @@ sponsors:
   - name: Great Lakes Fishery Commission
     image: sponsors/GreatLake.png
     url: https://www.glfc.org/
+    size: 80                    # percent of default logo size (omit = 100%)
 ---
 
 I am a PhD student in the [Smart Microsystems Lab](https://smlab.msu.edu/) at [Michigan State University](https://msu.edu/), advised by [Prof. Xiaobo Tan](https://www.egr.msu.edu/~xbtan/) starting from 2021. Prior to joining MSU, I received my Bachelor degree in Robotics Engineering from the Department of Automation at [Southeast University](https://www.seu.edu.cn/english/) in 2020, advised by [Prof. Aiguo Song](https://scholar.google.com/citations?user=RjQ5TrEAAAAJ&hl=en).

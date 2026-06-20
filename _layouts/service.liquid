@@ -1,0 +1,136 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<style type="text/css">
+  .service-page .post-header {
+    margin-bottom: 1rem;
+  }
+
+  .service-page article {
+    line-height: 1.45;
+  }
+
+  .service-section {
+    margin-top: 1.2rem;
+  }
+
+  .service-section:first-of-type {
+    margin-top: 0;
+  }
+
+  .service-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 0.45rem;
+  }
+
+  .service-section-heading h3 {
+    flex: 0 0 auto;
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .service-section-divider {
+    flex: 1 1 auto;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  .service-list {
+    display: grid;
+    gap: 0.16rem;
+    margin: 0 0 0.95rem;
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 2.4rem;
+    align-items: start;
+  }
+
+  .service-row:not(.has-years) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-item-text {
+    position: relative;
+    min-width: 0;
+    padding-left: 1.05rem;
+  }
+
+  .service-item-text::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 1.45;
+  }
+
+  .service-item-text p {
+    display: inline;
+    margin: 0;
+  }
+
+  .service-years {
+    white-space: nowrap;
+    text-align: right;
+    font-style: italic;
+    color: var(--global-text-color);
+  }
+
+  @media (max-width: 575px) {
+    .service-row {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 0.05rem;
+    }
+
+    .service-years {
+      padding-left: 1.05rem;
+      text-align: left;
+    }
+  }
+</style>
+
+<div class="post service-page">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    {% assign service_body = content | strip %}
+    {% if service_body != '' %}
+      {{ content }}
+    {% endif %}
+
+    {% for section in page.service_sections %}
+      <section class="service-section">
+        <div class="service-section-heading">
+          <h3>{{ section.title }}</h3>
+          <div class="service-section-divider"></div>
+        </div>
+
+        <div class="service-list">
+          {% for item in section.items %}
+            <div class="service-row {% if item.years %}has-years{% endif %}">
+              <div class="service-item-text">{{ item.text | markdownify }}</div>
+              {% if item.years %}
+                <div class="service-years">{{ item.years }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </article>
+</div>

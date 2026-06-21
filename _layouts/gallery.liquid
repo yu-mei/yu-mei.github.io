@@ -1,0 +1,161 @@
+---
+layout: default
+---
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<style type="text/css">
+  .gallery-page .post-header {
+    margin-bottom: 2rem;
+  }
+
+  .gallery-eyebrow {
+    margin: 0 0 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--global-theme-color);
+  }
+
+  .gallery-page .post-title {
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .gallery-page .post-description {
+    margin-top: 0.6rem;
+    color: var(--global-text-color-light);
+  }
+
+  /* Card grid — 3 columns on desktop, 2 on tablet, 1 on phone */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.2rem 1.8rem;
+  }
+
+  .gallery-card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Fixed aspect ratio keeps every photo aligned, no matter its size */
+  .gallery-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: var(--global-card-bg-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+  }
+
+  .gallery-card a:hover .gallery-thumb img,
+  .gallery-thumb img:hover {
+    transform: scale(1.04);
+  }
+
+  .gallery-card-body {
+    padding-top: 0.95rem;
+  }
+
+  .gallery-card-eyebrow {
+    margin: 0 0 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--global-theme-color);
+  }
+
+  .gallery-card-title {
+    margin: 0 0 0.45rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--global-text-color);
+  }
+
+  .gallery-card-meta {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 576px) {
+    .gallery-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.8rem;
+    }
+  }
+</style>
+
+<div class="post gallery-page">
+  <header class="post-header">
+    {% if page.eyebrow != blank %}
+      <p class="gallery-eyebrow">{{ page.eyebrow }}</p>
+    {% endif %}
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    {% assign gallery_body = content | strip %}
+    {% if gallery_body != '' %}
+      {{ content }}
+    {% endif %}
+
+    <div class="gallery-grid">
+      {% for item in page.gallery_items %}
+        <figure class="gallery-card">
+          {% if item.link %}
+            <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer">
+          {% endif %}
+          <div class="gallery-thumb">
+            <img
+              src="{{ item.image | relative_url }}"
+              alt="{{ item.caption | default: item.label | strip_html }}"
+              loading="lazy"
+              {% unless item.link %}data-zoomable{% endunless %}
+            >
+          </div>
+          {% if item.link %}</a>{% endif %}
+
+          <figcaption class="gallery-card-body">
+            {% if item.label %}
+              <p class="gallery-card-eyebrow">{{ item.label }}</p>
+            {% endif %}
+            {% if item.caption %}
+              <p class="gallery-card-title">{{ item.caption }}</p>
+            {% endif %}
+            {% if item.date %}
+              <p class="gallery-card-meta">{{ item.date }}</p>
+            {% endif %}
+          </figcaption>
+        </figure>
+      {% endfor %}
+    </div>
+  </article>
+</div>

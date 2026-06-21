@@ -87,6 +87,6 @@ service_sections:
           Research Presentation, Graduate Research Symposium, MSU.
         years: "2023-2024"
       - text: >-
-          Poster Presentation, "Soft Pneumatic Manipulator with Stiffness Tuning Capability," *Octopus Inspired Biodesign Symposium* by NIH BRAIN Initiative and MSU, East Lansing, MI, USA.
+          Poster Presentation, *Octopus Inspired Biodesign Symposium* by NIH BRAIN Initiative and MSU, "Soft Pneumatic Manipulator with Stiffness Tuning Capability," East Lansing, MI, USA.
         years: "May 2022"
 ---

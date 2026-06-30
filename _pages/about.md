@@ -17,6 +17,10 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 selected_projects: true # includes selected project cards (projects in _projects/ with selected: true)
 social: false # includes social icons at the bottom of the page
 
+# Red announcement banner shown below the intro (leave blank or delete the value to hide)
+announcement_banner: >-
+  📢 I expect to complete my Ph.D. in Summer 2027 and am actively seeking and faculty and postdoctoral positions starting in Fall 2027.
+
 announcements:
   enabled: true # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items

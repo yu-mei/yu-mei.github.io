@@ -92,6 +92,24 @@ layout: default
     </div>
     <!-- end .clearfix -->
 
+    <!-- Announcement banner (red box; edit or clear `announcement_banner` in about.md front matter) -->
+    {% if page.announcement_banner and page.announcement_banner != blank %}
+      <style>
+        .announcement-banner {
+          border: 1px solid var(--global-danger-block);
+          border-radius: 8px;
+          margin: 22px 0 8px;
+          font-size: 1.05rem;
+        }
+        .announcement-banner p {
+          margin: 0;
+        }
+      </style>
+      <blockquote class="block-danger announcement-banner">
+        {{ page.announcement_banner | markdownify }}
+      </blockquote>
+    {% endif %}
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <style>

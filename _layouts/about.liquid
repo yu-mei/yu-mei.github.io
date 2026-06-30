@@ -94,10 +94,10 @@ layout: default
     </div>
     <!-- end .clearfix -->
 
-    <!-- Announcement banner (red box; edit or clear `announcement_banner` in about.md front matter) -->
-    {% if page.announcement_banner and page.announcement_banner != blank %}
-      {% assign banner_icon = page.announcement_icon | default: '📢' %}
-      {% assign banner_text = page.announcement_banner | remove_first: '📢' | strip %}
+    <!-- Announcement banner (red box; toggle with `announcement_banner.enabled` in about.md front matter) -->
+    {% if page.announcement_banner.enabled and page.announcement_banner.text != blank %}
+      {% assign banner_icon = page.announcement_banner.icon | default: '📢' %}
+      {% assign banner_text = page.announcement_banner.text | remove_first: '📢' | strip %}
       <style>
         .announcement-banner {
           display: flex;

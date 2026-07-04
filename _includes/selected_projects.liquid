@@ -1,5 +1,5 @@
 <div class="projects">
-  {% assign selected_projects = site.projects | where: "selected", true | sort: "year" | reverse %}
+  {% assign selected_projects = site.projects | where: "selected", true | where_exp: "project", "project.hide != true" | sort: "year" | reverse %}
   {% for project in selected_projects %}
     {% include projects.liquid %}
   {% endfor %}

@@ -455,6 +455,9 @@ ninja.data = [{
           section: "News",},{id: "news-tada-one-paper-on-data-driven-control-of-soft-robots-under-unknown-external-payloads-is-accepted-to-ieee-ra-l",
           title: ':tada: One paper on data-driven control of soft robots under unknown external payloads...',
           description: "",
+          section: "News",},{id: "news-tada-our-paper-on-dynamic-modeling-and-robust-gait-optimization-of-a-compliant-worm-robot-is-accepted-to-the-asme-journal-of-dynamic-systems-measurement-and-control",
+          title: ':tada: Our paper on dynamic modeling and robust gait optimization of a compliant...',
+          description: "",
           section: "News",},{id: "projects-5g-intelligent-mobile-robot",
           title: '5G Intelligent Mobile Robot',
           description: "Integrated A* global path planning with Timed Elastic Band local trajectory optimization, enabling efficient global route generation while reducing the computational burden of local navigation.",
@@ -515,7 +518,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/Resume_YuMei_Academic_20260601.pdf", "_blank");
+          window.open("/assets/pdf/Resume_YuMei_Academic_20260831.pdf", "_blank");
         },
       },{
         id: 'social-email',

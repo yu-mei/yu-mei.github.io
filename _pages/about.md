@@ -19,7 +19,7 @@ social: false # includes social icons at the bottom of the page
 
 # Red announcement banner shown below the intro
 announcement_banner:
-  enabled: false # set to true to show the banner, false to hide it
+  enabled: true # set to true to show the banner, false to hide it
   text: >-
     📢 I expect to complete my Ph.D. in Summer 2027 and am actively seeking and faculty and postdoctoral positions starting in Fall 2027.
 

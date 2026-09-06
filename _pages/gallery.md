@@ -19,46 +19,50 @@ description: Talks, Awards, and Outreach.
 # ---------------------------------------------------------------------------
 gallery_items:
   - images:
-      - assets/img/Gallery/BestJournal1.jpg
-      - assets/img/Gallery/BestJournal2.jpg
-      - assets/img/Gallery/BestJournal3.jpg
-    label: ASME DSCD
-    caption: Received the 2025 Best Mechatronics Paper Award.
-    date: May 2026
+      - assets/img/Gallery/AIM2026_1.jpg
+    label: IEEE AIM 2026
+    caption: Oral presentation at IEEE AIM 2026 (presented by advisor).
+    date: July 2026 - Genova, Italy
 
   - images:
-      - assets/img/Gallery/MECC1.jpg
-      - assets/img/Gallery/MECC2.jpg
-      - assets/img/Gallery/MECC3.jpg
+      - assets/img/Gallery/ACC2026_1.jpg
+      - assets/img/Gallery/ACC2026_2.jpg
+    label: ACC 2026
+    caption: Received the 2025 Best Mechatronics Paper Award at ACC 2026.
+    date: May 2026 - New Orleans, LA, USA
+
+  - images:
+      - assets/img/Gallery/MECC2025_1.jpg
+      - assets/img/Gallery/MECC2025_2.jpg
     label: MECC 2025
     caption: Best Student Paper Finalist at MECC 2025.
     date: October 2025 - Pittsburgh, PA, USA
 
   - images:
-      - assets/img/Gallery/RisingStar1.jpg
-      - assets/img/Gallery/RisingStar2.jpg
+      - assets/img/Gallery/RisingStar2025_1.jpg
+      - assets/img/Gallery/RisingStar2025_2.jpg
     label: ASME DSCD Rising Star
     caption: Recognized as a 2025 ASME DSCD Rising Star.
     date: October 2025 - Pittsburgh, PA, USA
 
   - images:
-      - assets/img/Gallery/AIM1.jpg
-      - assets/img/Gallery/AIM2.jpg
-      - assets/img/Gallery/AIM4.jpg
+      - assets/img/Gallery/AIM2024_1.jpg
+      - assets/img/Gallery/AIM2024_2.jpg
+      - assets/img/Gallery/AIM2024_3.jpg
     label: IEEE AIM 2024
     caption: Received the Best Student Paper Award at IEEE AIM 2024.
     date: July 2024 - Boston, MA, USA
 
   - images:
-      - assets/img/Gallery/IROS1.jpg
-      - assets/img/Gallery/IROS2.jpg
+      - assets/img/Gallery/IROS2023_1.jpg
+      - assets/img/Gallery/IROS2023_2.jpg
     label: IEEE/RSJ IROS 2023
     caption: Attended IROS 2023 with the MSU robotics community.
     date: October 2023 - Detroit, MI, USA
 
   - images:
-      - assets/img/Gallery/ACC1.jpg
-      - assets/img/Gallery/ACC2.jpg
+      - assets/img/Gallery/ACC2023_1.jpg
+      - assets/img/Gallery/ACC2023_2.jpg
     label: ACC 2023
     caption: My first conference talk on ACC 2023.
     date: May 2023 - San Diego, CA, USA

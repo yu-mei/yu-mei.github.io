@@ -63,9 +63,4 @@ gallery_items:
     caption: My first conference talk on ACC 2023.
     date: May 2023 - San Diego, CA, USA
 
-  - images:
-      - assets/img/Gallery/K12_1.jpg
-    label: K-12 Outreach
-    caption: Introduced K-12 students to soft robotics.
-    date: East Lansing, MI, USA
 ---

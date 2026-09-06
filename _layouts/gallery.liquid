@@ -60,15 +60,43 @@ layout: default
     position: absolute;
     inset: 0;
     display: block;
-    opacity: 0;
+    z-index: 0;
     visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    transform: translateX(100%);
+    transition: transform 0.48s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .gallery-slide.is-active {
     z-index: 1;
-    opacity: 1;
     visibility: visible;
+    transform: translateX(0);
+  }
+
+  .gallery-slide.is-entering-left,
+  .gallery-slide.is-entering-right,
+  .gallery-slide.is-exiting-left,
+  .gallery-slide.is-exiting-right {
+    visibility: visible;
+  }
+
+  .gallery-slide.is-entering-left {
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: none;
+  }
+
+  .gallery-slide.is-entering-right {
+    z-index: 2;
+    transform: translateX(100%);
+    transition: none;
+  }
+
+  .gallery-slide.is-exiting-left {
+    transform: translateX(-100%);
+  }
+
+  .gallery-slide.is-exiting-right {
+    transform: translateX(100%);
   }
 
   .gallery-slide img {
@@ -93,26 +121,28 @@ layout: default
     align-items: center;
     justify-content: center;
     padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 50%;
-    background: rgba(20, 24, 28, 0.58);
+    border: 0;
+    background: transparent;
     color: #fff;
     cursor: pointer;
-    opacity: 0.78;
+    opacity: 0;
+    pointer-events: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
     transform: translateY(-50%);
-    transition: background-color 0.2s ease, opacity 0.2s ease;
+    transition: opacity 0.2s ease;
   }
 
-  .gallery-carousel-control:hover,
+  .gallery-carousel:hover .gallery-carousel-control,
+  .gallery-carousel:focus-within .gallery-carousel-control,
   .gallery-carousel-control:focus-visible {
-    background: rgba(20, 24, 28, 0.82);
     color: #fff;
     opacity: 1;
+    pointer-events: auto;
   }
 
   .gallery-carousel-control:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
+    outline: 1px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 1px;
   }
 
   .gallery-carousel-control.previous {
@@ -124,7 +154,7 @@ layout: default
   }
 
   .gallery-carousel-control i {
-    font-size: 0.8rem;
+    font-size: 1rem;
     pointer-events: none;
   }
 
@@ -165,6 +195,13 @@ layout: default
     .gallery-grid {
       grid-template-columns: minmax(0, 1fr);
       gap: 1.8rem;
+    }
+  }
+
+  @media (hover: none) {
+    .gallery-carousel-control {
+      opacity: 0.9;
+      pointer-events: auto;
     }
   }
 
@@ -297,15 +334,46 @@ layout: default
       let currentIndex = 0;
       let autoplayTimer;
 
-      const showSlide = (newIndex) => {
-        currentIndex = (newIndex + slides.length) % slides.length;
+      let isAnimating = false;
+      let animationTimer;
+
+      const updateAccessibility = () => {
         slides.forEach((slide, index) => {
           const isActive = index === currentIndex;
-          slide.classList.toggle('is-active', isActive);
           slide.setAttribute('aria-hidden', String(!isActive));
           if (slide.matches('a')) slide.tabIndex = isActive ? 0 : -1;
         });
         status.textContent = `Photo ${currentIndex + 1} of ${slides.length}`;
+      };
+
+      const showSlide = (newIndex, direction = 1) => {
+        const targetIndex = (newIndex + slides.length) % slides.length;
+        if (targetIndex === currentIndex || isAnimating) return;
+
+        const outgoingSlide = slides[currentIndex];
+        const incomingSlide = slides[targetIndex];
+        const enteringClass = direction > 0 ? 'is-entering-right' : 'is-entering-left';
+        const exitingClass = direction > 0 ? 'is-exiting-left' : 'is-exiting-right';
+
+        isAnimating = true;
+        incomingSlide.classList.add(enteringClass);
+        incomingSlide.getBoundingClientRect();
+
+        outgoingSlide.classList.remove('is-active');
+        outgoingSlide.classList.add(exitingClass);
+        incomingSlide.classList.remove(enteringClass);
+        incomingSlide.classList.add('is-active');
+        currentIndex = targetIndex;
+        updateAccessibility();
+
+        window.clearTimeout(animationTimer);
+        animationTimer = window.setTimeout(
+          () => {
+            outgoingSlide.classList.remove(exitingClass);
+            isAnimating = false;
+          },
+          reduceMotion ? 0 : 500
+        );
       };
 
       const stopAutoplay = () => {
@@ -315,11 +383,11 @@ layout: default
 
       const startAutoplay = () => {
         if (reduceMotion || autoplayTimer) return;
-        autoplayTimer = window.setInterval(() => showSlide(currentIndex + 1), 1800);
+        autoplayTimer = window.setInterval(() => showSlide(currentIndex + 1, 1), 1800);
       };
 
       const changeSlide = (step) => {
-        showSlide(currentIndex + step);
+        showSlide(currentIndex + step, step);
         if (autoplayTimer) {
           stopAutoplay();
           startAutoplay();
@@ -340,7 +408,7 @@ layout: default
         }
       });
 
-      showSlide(0);
+      updateAccessibility();
     });
   });
 </script>

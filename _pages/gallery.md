@@ -28,21 +28,21 @@ gallery_items:
       - assets/img/Gallery/ACC2026_1.jpg
       - assets/img/Gallery/ACC2026_2.jpg
     label: ACC 2026
-    caption: Received the 2025 Best Mechatronics Paper Award at ACC 2026.
+    caption: Received the 2025 Best Journal Paper Award at ACC 2026.
     date: May 2026 - New Orleans, LA, USA
 
   - images:
       - assets/img/Gallery/MECC2025_1.jpg
       - assets/img/Gallery/MECC2025_2.jpg
     label: MECC 2025
-    caption: Best Student Paper Finalist at MECC 2025.
+    caption: Received the Best Student Paper Finalist at MECC 2025.
     date: October 2025 - Pittsburgh, PA, USA
 
   - images:
       - assets/img/Gallery/RisingStar2025_1.jpg
       - assets/img/Gallery/RisingStar2025_2.jpg
     label: ASME DSCD Rising Star
-    caption: Recognized as a 2025 ASME DSCD Rising Star.
+    caption: Recognized as 2025 ASME DSCD Rising Star.
     date: October 2025 - Pittsburgh, PA, USA
 
   - images:

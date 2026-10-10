@@ -26,7 +26,9 @@
   {% else %}
     {% capture title %}{{ site.title }}{% endcapture %}
   {% endif %}
-  {% if page.url == '/blog/index.html' %}
+  {% if page.url == '/' %}
+    {{ title }} | Soft Robotics Researcher at Michigan State University
+  {% elsif page.url == '/blog/index.html' %}
     {{ page.title }} | {{ title }}
   {% elsif page.title != 'blank' and page.url != '/' %}
     {% if page.title == null or page.title == '' %}
@@ -40,6 +42,29 @@
 </title>
 <meta name="author" content="{{ author_name }}">
 <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.url == '/' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "{{ author_name }}",
+        "url": "{{ '/' | absolute_url }}",
+        "jobTitle": "PhD student",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Michigan State University"
+        },
+        "sameAs": [
+          "https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}",
+          "https://github.com/{{ site.data.socials.github_username }}",
+          "https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}"
+        ]
+      }
+    }
+  </script>
+{% endif %}
 {% if page.keywords or site.keywords %}
   <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords }}{% endif %}">
 {% endif %}

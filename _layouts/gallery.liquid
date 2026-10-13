@@ -107,8 +107,18 @@ layout: default
     transition: transform 0.35s ease;
   }
 
-  .gallery-thumb:hover .gallery-slide.is-active img {
+  .gallery-thumb:hover .gallery-slide.is-active img:not([data-zoomable]) {
     transform: scale(1.04);
+  }
+
+  .gallery-slide img[data-zoomable]:focus-visible {
+    outline: 3px solid var(--global-theme-color);
+    outline-offset: -3px;
+  }
+
+  /* Zoomed clones live under body, outside the cropped thumbnail. */
+  .gallery-zoom-image.medium-zoom-image--opened {
+    object-fit: contain;
   }
 
   .gallery-carousel-control {
@@ -275,7 +285,13 @@ layout: default
                       aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
                     >
                   {% endif %}
-                    <img src="{{ image | relative_url }}" alt="{{ image_alt | strip }}" loading="lazy">
+                    <img
+                      class="gallery-zoom-image"
+                      src="{{ image | relative_url }}"
+                      alt="{{ image_alt | strip }}"
+                      loading="lazy"
+                      {% unless item.link %}data-zoomable{% endunless %}
+                    >
                   {% if item.link %}</a>{% else %}</div>{% endif %}
                 {% endfor %}
               {% else %}
@@ -285,6 +301,7 @@ layout: default
                   <div class="gallery-slide is-active">
                 {% endif %}
                   <img
+                    class="gallery-zoom-image"
                     src="{{ item.image | relative_url }}"
                     alt="{{ item.caption | default: item.label | strip_html }}"
                     loading="lazy"
@@ -326,6 +343,20 @@ layout: default
   document.addEventListener('DOMContentLoaded', () => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    if (typeof mediumZoom === 'function') {
+      document.querySelectorAll('.gallery-slide img[data-zoomable]').forEach((image) => {
+        image.tabIndex = image.closest('.gallery-slide').classList.contains('is-active') ? 0 : -1;
+        image.setAttribute('role', 'button');
+        image.setAttribute('aria-label', `Enlarge ${image.alt}`);
+        image.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            image.click();
+          }
+        });
+      });
+    }
+
     document.querySelectorAll('[data-gallery-carousel]').forEach((carousel) => {
       const slides = Array.from(carousel.querySelectorAll('[data-gallery-slide]'));
       const previous = carousel.querySelector('[data-gallery-previous]');
@@ -333,6 +364,7 @@ layout: default
       const status = carousel.querySelector('[data-gallery-status]');
       let currentIndex = 0;
       let autoplayTimer;
+      let isZoomed = false;
 
       let isAnimating = false;
       let animationTimer;
@@ -342,13 +374,15 @@ layout: default
           const isActive = index === currentIndex;
           slide.setAttribute('aria-hidden', String(!isActive));
           if (slide.matches('a')) slide.tabIndex = isActive ? 0 : -1;
+          const zoomImage = slide.querySelector('img[role="button"]');
+          if (zoomImage) zoomImage.tabIndex = isActive ? 0 : -1;
         });
         status.textContent = `Photo ${currentIndex + 1} of ${slides.length}`;
       };
 
       const showSlide = (newIndex, direction = 1) => {
         const targetIndex = (newIndex + slides.length) % slides.length;
-        if (targetIndex === currentIndex || isAnimating) return;
+        if (targetIndex === currentIndex || isAnimating || isZoomed) return;
 
         const outgoingSlide = slides[currentIndex];
         const incomingSlide = slides[targetIndex];
@@ -382,7 +416,7 @@ layout: default
       };
 
       const startAutoplay = () => {
-        if (reduceMotion || autoplayTimer) return;
+        if (reduceMotion || autoplayTimer || isZoomed) return;
         autoplayTimer = window.setInterval(() => showSlide(currentIndex + 1, 1), 1800);
       };
 
@@ -396,6 +430,22 @@ layout: default
 
       previous.addEventListener('click', () => changeSlide(-1));
       next.addEventListener('click', () => changeSlide(1));
+      carousel.querySelectorAll('img[data-zoomable]').forEach((image) => {
+        image.addEventListener('medium-zoom:open', () => {
+          isZoomed = true;
+          stopAutoplay();
+        });
+        image.addEventListener('medium-zoom:closed', () => {
+          isZoomed = false;
+          if (carousel.matches(':hover')) startAutoplay();
+        });
+      });
+      // Do not zoom a photo while its slide is moving into position.
+      carousel.addEventListener('click', (event) => {
+        if (isAnimating && event.target.matches('img[data-zoomable]')) {
+          event.stopPropagation();
+        }
+      });
       carousel.addEventListener('mouseenter', startAutoplay);
       carousel.addEventListener('mouseleave', stopAutoplay);
       carousel.addEventListener('keydown', (event) => {

@@ -24,6 +24,9 @@ service_sections:
           [Nonlinear Dynamics](https://link.springer.com/journal/11071)
         years: "2025-Present"
       - text: >-
+          [International Journal of Intelligent Robotics and Applications](https://link.springer.com/journal/41315)
+        years: "2026-Present"
+      - text: >-
           [IEEE Sensors Journal](https://ieee-sensors.org/ieee-sensors-journal/)
         years: "2025-Present"
       - text: >-
@@ -42,6 +45,9 @@ service_sections:
           [Frontiers in Robotics and AI](https://www.frontiersin.org/journals/robotics-and-ai)
         years: "2024-Present"
       - text: >-
+          [Discover Applied Sciences](https://link.springer.com/journal/42452)
+        years: "2026-Present"
+      - text: >-
           [International Journal of Intelligent Transportation Systems Research](https://link.springer.com/journal/13177)
         years: "2025-Present"
       - text: >-
@@ -57,7 +63,7 @@ service_sections:
           [Modeling, Estimation, and Control Conference (MECC)](https://a2c2.org/events/modeling-estimation-and-control-conference)
         years: "2024-Present"
       - text: >-
-          [IEEE International Conference on Soft Robotics (RoboSoft)](http://softroboticsconference.org/)
+          [IEEE-RAS International Conference on Soft Robotics (RoboSoft)](http://softroboticsconference.org/)
         years: "2024-Present"
       - text: >-
           [American Control Conference (ACC)](https://a2c2.org/)
